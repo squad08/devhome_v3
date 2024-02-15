@@ -1,0 +1,24 @@
+@import url(style.css);
+
+#descubra {
+	margin-top: 100px;
+	font-family: var(--font-default);
+	color: var(--text-light);
+}
+
+#jobs {
+	padding-left: 15px;
+	font-family: var(--font-default);
+	color: var(--text-light);
+}
+
+#cursos {
+	padding-left: 15px;
+	font-family: var(--font-default);
+	color: var(--text-light);
+}
+
+#vagas-list {
+	font-family: var(--font-default);
+	color: var(--text-light);
+}

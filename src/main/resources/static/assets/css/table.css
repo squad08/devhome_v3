@@ -1,0 +1,76 @@
+@import url(style.css);
+
+.table-contentor {
+	margin-top: 200px;
+	max-width: 100%;
+	background-color: var(--bg-dark);
+	border-radius: 15px;
+	padding: 20px;
+	box-shadow: 0 0 10px var(--color-special);
+	overflow-x: auto;
+}
+
+h2 {
+	color: var(--color-special);
+}
+
+/* Estilos para a tabela */
+.table {
+	margin-top: 1rem;
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid var(--color-light);
+}
+
+/* Estilos para o cabeçalho da tabela */
+thead {
+	background-color: aqua;
+	color: #fc0000;
+}
+
+/* Estilos para as células do cabeçalho da tabela */
+th {
+	padding: 10px;
+	border: 1px solid var(--color-dark);
+	color: var(--color-secundaria);
+}
+
+/* Estilos para as células do corpo da tabela */
+td {
+	padding: 10px;
+	border: 1px solid var(--color-dark);
+	color: var(--color-secundaria);
+}
+
+.btn-container {
+	display: flex;
+	flex-direction: column;
+	/* Coloque os botões verticalmente */
+	gap: 10px;
+}
+
+/* Estilos para os botões de ação */
+.btn {
+	padding: 5px 10px;
+	text-decoration: none;
+	border-radius: 3px;
+	font-weight: bold;
+	color: #fff;
+	cursor: pointer;
+}
+
+.btn-success {
+	background-color: #28a745;
+}
+
+.btn-danger {
+	background-color: #dc3545;
+}
+
+/* Estilos para tornar as colunas da tabela responsivas */
+th,
+td {
+	text-align: left;
+	word-wrap: break-word;
+	/* Quebra de palavra para conteúdo longo */
+}

@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+
+:root {
+	--font-default: "Poppins", sans-serif;
+	--font-special: 'Calistoga', cursive;
+	--font-size-default: 2vmin;
+	--font-size-special: 3rem;
+	--font-weight-default: 400;
+	--font-weight-special: 700;
+	--font-line-default: 1.5;
+	--font-line-special: 1.5;
+	--font-letter-spacing-default: 0.5vh;
+	--font-letter-spacing-special: 0.9vh;
+
+	--color-other: #ffc107;
+	--color-light: #D7F9FF;
+	--color-dark: #212529;
+	--color-pink: #2BDEFD;
+	--color-special: hsl(336, 100%, 50%);
+	--translucid-special: hsla(336, 100%, 50%, .2);
+	--bs-secondary-color: hsla(336, 100%, 50%, .8);
+
+	--text-other: var(--color-other);
+	--text-light: var(--color-light);
+	--text-dark: var(--color-dark);
+	--text-special: var(--color-special);
+	--bg-other: var(--color-other);
+	--bg-light: var(--color-light);
+	--bg-dark: var(--color-dark);
+	--bg-special: var(--color-special);
+	--hover-other: var(--color-other);
+	--hover-light: var(--color-light);
+	--hover-dark: var(--color-dark);
+	--hover-special: var(--color-special);
+	--icon-other: var(--color-other);
+	--icon-light: var(--color-light);
+	--icon-dark: var(--color-dark);
+	--icon-special: var(--color-special);
+
+	--btn-other: var(--color-other);
+	--btn-light: var(--color-light);
+	--btn-dark: var(--color-dark);
+	--btn-special: var(--color-special);
+
+	--chaves_logo: var(--text-special);
+
+	--gradient-other: linear-gradient(to left,
+			var(--bg-dark),
+			var(--bg-special));
+
+	--gradient-dark: linear-gradient(to bottom,
+			rgb(33, 37, 41),
+			rgba(33, 37, 41, .5));
+
+	--gradient-special: linear-gradient(to right,
+			var(--bg-other),
+			var(--bg-special));
+}
+
+*,
+::after,
+::before {
+	font-family: var(--font-family-default);
+	font-size: var(--font-size-default);
+
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+.navbar {
+	z-index: 1000;
+}
+
+.bd-navbar {
+	background-image: var(--gradient-dark);
+	box-shadow: 0 0.5rem 1rem var(--bg-dark), inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.navbar-nav,
+.nav-item,
+.dropdown {
+	--bs-nav-link-font-weight: var(--font-weight-default);
+	--bs-nav-link-color: var(--text-light);
+	--bs-nav-link-hover-color: var(--hover-special);
+}
+
+.dropdown-menu:hover {
+	filter: drop-shadow(7px 7px 6.6px var(--bg-special));
+}
+
+#logo {
+	max-width: 20vmin;
+	transform: scale(1.05);
+}
+
+#icon-logo {
+	max-width: 10vmin;
+	filter: drop-shadow(0px 0px 20px var(--color-special));
+	transform: scale(1.05);
+}
+
+a:link {
+	color: var(--text-light);
+	text-decoration: none;
+}
+
+a:hover {
+	color: var(--text-special);
+}
+
+.bi-three-dots-vertical,
+.bi-c-circle,
+.bi-arrow-up-short {
+	color: var(--icon-special);
+}
+
+.bi {
+	fill: currentColor;
+}
+
+.bd-mode-toggle {
+	z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+	display: block !important;
+}
+
+.enfase-text {
+	font-family: var(--font-family-special);
+	font-size: var(--font-size-special);
+	font-weight: var(--font-weight-special);
+	color: var(--text-special);
+}
+
+.gradient-text {
+	font-family: var(--font-special);
+	font-size: var(--font-size-special);
+	font-weight: var(--font-weight-special);
+	color: var(--text-special);
+
+	background-image: var(--gradient-special);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	position: relative;
+	z-index: 1;
+}
+
+.svg-footer {
+	margin-top: -2.5rem;
+	width: 100%;
+	height: 6rem;
+	display: block;
+}
+
+.b-example-divider {
+	width: 100%;
+	height: 3rem;
+	background-color: rgba(0, 0, 0, .1);
+	border: solid var(--translucid-special);
+	border-width: 1px 0;
+	box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+hr,
+.border-bottom {
+	border-image: var(--gradient-other) 1;
+}
+
+.btn-outline-primary {
+	--bs-btn-color: var(--btn-special);
+	--bs-btn-border-color: var(--btn-special);
+	--bs-btn-hover-color: var(--btn-light);
+	--bs-btn-hover-bg: var(--btn-special);
+	--bs-btn-hover-border-color: var(--btn-special);
+	--bs-btn-active-color: var(--btn-dark);
+	--bs-btn-active-bg: var(--btn-light);
+	--bs-btn-active-border-color: var(--btn-light);
+}
+
+.btn-warning {
+	--bs-btn-color: var(--btn-dark);
+	--bs-btn-bg: var(--btn-other);
+	--bs-btn-border-color: var(--btn-other);
+	--bs-btn-hover-color: var(--btn-dark);
+	--bs-btn-hover-bg: var(--btn-light);
+	--bs-btn-hover-border-color: var(--btn-light);
+	--bs-btn-active-color: var(--btn-other);
+	--bs-btn-active-bg: black;
+	--bs-btn-active-border-color: black;
+}
+
+.btn-primary {
+	--bs-btn-color: var(--btn-light);
+	--bs-btn-bg: var(--btn-special);
+	--bs-btn-border-color: var(--btn-special);
+	--bs-btn-hover-color: var(--btn-dark);
+	--bs-btn-hover-bg: var(--btn-light);
+	--bs-btn-hover-border-color: var(--btn-light);
+	--bs-btn-active-color: var(--btn-special);
+	--bs-btn-active-bg: black;
+	--bs-btn-active-border-color: black;
+}
+
+.btn-bd-primary {
+	--bs-btn-color: var(--btn-light);
+	--bs-btn-bg: var(--btn-special);
+	--bs-btn-border-color: var(--btn-special);
+	--bs-btn-hover-color: var(--btn-dark);
+	--bs-btn-hover-bg: var(--btn-light);
+	--bs-btn-hover-border-color: var(--btn-light);
+	--bs-btn-active-color: var(--btn-other);
+	--bs-btn-active-bg: black;
+	--bs-btn-active-border-color: black;
+}
+
+.btn-primary:hover {
+	filter: drop-shadow(3px 3px 8px var(--color-special));
+}
+
+#typing-header {
+	overflow: hidden;
+	white-space: nowrap;
+	animation: typing 2s steps(40, end) forwards;
+}
+
+#typing-header::after {
+	color: var(--text-special);
+	font-size: var(--font-size-special);
+	content: '_';
+	display: inline-block;
+	animation: blink .75s step-end infinite;
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}

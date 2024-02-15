@@ -1,0 +1,44 @@
+<div th:replace="shared/head"></div>
+<link rel="stylesheet" href="/assets/css/menu.css">
+<link rel="stylesheet" href="/assets/css/modules.css">
+<script src="/assets/script/menu.js"></script>
+<script src="/assets/script/module.js"></script>
+<script src="/assets/script/moduleFullStack.js"></script>
+
+<body>
+	<main>
+		<div class="contentor">
+			<div class="menu">
+				<div class="menu-toggle active" id="mobile-menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<nav class="sidebar">
+					<ul>
+						<li><a href="#" onclick="mudarModuloBackEnd('expressjs')">Express.js</a></li>
+						<li><a href="#" onclick="mudarModuloBackEnd('nodejs')">Node.js</a></li>
+						<li><a href="#" onclick="mudarModuloBackEnd('mysql')">Mysql</a></li>
+						<li><a th:href="@{/trilhas}" id="linkMenu">Voltar</a></li>
+					</ul>
+				</nav>
+
+				<div class="content">
+					<h1 id="tituloModulo">Bem-vindo ao Mundo do Desenvolvimento Back-End!</h1>
+
+					<p id="conteudoModulo">Estamos empolgados por você se juntar a nós nesta jornada pelo fascinante
+						universo do desenvolvimento back-end. Ao longo deste curso, exploraremos os fundamentos,
+						tecnologias e práticas que impulsionam o lado "invisível" da web, tornando possíveis as
+						funcionalidades e interações complexas que os usuários adoram.
+					</p>
+
+					<a id="playlist" href="#" target="_blank">Iniciar o Curso</a>
+					<div class="imagem"><img src="/assets/img/other/back-end.jpg" alt=""></div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

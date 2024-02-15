@@ -1,0 +1,76 @@
+<div th:replace="shared/head"></div>
+<link rel="stylesheet" href="/assets/css/menuAdm.css">
+<link rel="stylesheet" href="/assets/css/table.css">
+<script src="/assets/script/menuAdm.js"></script>
+
+<body>
+	<main>
+		<div class="contentor">
+			<div th:replace="shared/menu :: dashboard"></div>
+
+			<div class="evento">
+				<section class="table-contentor">
+
+					<h2> Usuários Cadastrados </h2>
+
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col"> ID </th>
+								<th scope="col"> Foto </th>
+								<th scope="col"> Nome Completo </th>
+								<th scope="col"> Nascimento </th>
+								<th scope="col"> CPF </th>
+								<th scope="col"> Telefone </th>
+								<th scope="col"> E-mail </th>
+								<th scope="col"> Senha </th>
+								<th scope="col" class="text-center"> Ações </th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr th:each="user : ${user}">
+								<th scope="row" th:text="${user.id}"></th>
+
+								<td>
+									<img alt="imagem" height="70px" width="50px"
+										th:src="@{'/usuario/img/' + ${user.id}}" />
+								</td>
+
+								<td>
+									<a th:text="${user.name}" th:href="@{/usuario/editar/{id} (id=${user.id})}"></a>
+								</td>
+								<td th:text="${#temporals.format(user.birth, 'dd/MM/yyyy')}"></td>
+								<td
+									th:text="${#strings.replace(#strings.substring(user.cpf, 0, 3) + '.' + #strings.substring(user.cpf, 3, 6) + '.' + #strings.substring(user.cpf, 6, 9) + '-' + #strings.substring(user.cpf, 9, 11), '.-', '-')}">
+								</td>
+								<td
+									th:text="${#strings.replace(#strings.substring(user.contact, 0, 2) + ' ' + #strings.substring(user.contact, 2, 6) + '-' + #strings.substring(user.contact, 6, 10), '- ', '-')}">
+								</td>
+								<td th:text="${user.email}">></td>
+								<td th:text="${user.password}">></td>
+
+								<td>
+									<div class="btn-group">
+										<a th:href="@{/usuario/editar/{id} (id=${user.id})}" class="btn btn-success">
+											Editar
+										</a>
+
+										<a th:href="@{'/usuario/deletar/' + ${user.id}}" class="btn btn-danger"
+											th:onclick="'return confirm(\'Tem certeza que deseja excluir o usuário com ID: ' + ${user.id} + '?\');'">
+											Excluir
+										</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<a th:href="@{/usuario/novo}" class="btn btn-primary"> Novo Usuário </a>
+
+				</section>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

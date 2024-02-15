@@ -1,0 +1,23 @@
+@import url(style.css);
+
+main {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.chaves_logo {
+	font-size: var(--font-size-special);
+	color: var(--chaves_logo);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 100%;
+	cursor: none;
+	--bs-btn-hover-color: var(--btn-light);
+	--bs-btn-active-border-color: var(--btn-dark);
+	filter: drop-shadow(3px 3px 40px var(--color-special));
+}

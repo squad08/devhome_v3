@@ -1,0 +1,79 @@
+<div th:replace="shared/head"></div>
+<link rel="stylesheet" href="/assets/css/services.css">
+
+<body>
+	<div th:replace="shared/navbar"></div>
+
+	<main>
+		<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg" id="descubra">
+			<div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+
+				<h1 class="display-4 fw-bold lh-1 text-body-emphasis"> Bem-vindo à DevHome - Sua Casa de Inovação</h1>
+
+				<p class="lead">Na DevHome, estamos comprometidos em transformar sua jornada no mundo da tecnologia em
+					uma experiência única e significativa. Seja você um entusiasta em busca de conhecimento ou um
+					profissional procurando oportunidades empolgantes, você está no lugar certo!
+				</p>
+			</div>
+
+			<div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+				<img src="/assets/img/other/descubra.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+					width="700" height="500" loading="lazy">
+			</div>
+		</div>
+
+		<div class="b-example-divider"></div>
+
+		<div class="row flex-lg-row-reverse align-items-center g-5 py-5" id="cursos">
+			<div class="col-10 col-sm-8 col-lg-6">
+				<img src="/assets/img/other/cursos.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+					width="700" height="500" loading="lazy">
+			</div>
+
+			<div class="col-lg-6">
+				<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Explore nossa trilha aprendizado</h1>
+
+				<p class="lead">Aprimore suas habilidades e fique à frente no cenário tecnológico em constante evolução.
+					Navegue por nossos cursos especializados, desenvolvidos para impulsionar sua carreira. Da
+					programação de software à inteligência artificial, oferecemos conhecimento prático para levar suas
+					habilidades a novos patamares.
+				</p>
+
+				<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+					<a th:href="@{trilhas}">
+						<button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"> Cursos </button>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="b-example-divider"></div>
+
+		<div class="container col-xxl-8 px-4 py-5">
+			<div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+				<h1 class="display-4 fw-bold lh-1 text-body-emphasis">Descubra Oportunidades Profissionais</h1>
+
+				<p class="lead">Estamos conectando talentos com oportunidades emocionantes. Em nosso setor de vagas de
+					emprego, encontre posições desafiadoras em empresas inovadoras. Faça parte de equipes dinâmicas que
+					valorizam a criatividade e o crescimento profissional.
+				</p>
+
+				<div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+					<a th:href="@{vaga/oportunidades}">
+						<button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"> Vagas </button>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
+				<img src="/assets/img/other/job.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+					width="700" height="500" loading="lazy">
+			</div>
+		</div>
+	</main>
+
+	<div th:replace="shared/footer"></div>
+
+</body>
+
+</html>

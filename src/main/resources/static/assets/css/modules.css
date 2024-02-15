@@ -1,0 +1,10 @@
+@import url(style.css);
+
+.trilhas {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}

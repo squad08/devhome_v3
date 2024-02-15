@@ -1,0 +1,46 @@
+<div th:replace="shared/head"></div>
+<link rel="stylesheet" href="/assets/css/menu.css">
+<link rel="stylesheet" href="/assets/css/modules.css">
+<script src="/assets/script/menu.js"></script>
+<script src="/assets/script/module.js"></script>
+<script src="/assets/script/moduleFullStack.js"></script>
+
+<body>
+	<main>
+		<div class="contentor">
+			<div class="menu">
+				<div class="menu-toggle active" id="mobile-menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<nav class="sidebar">
+					<ul>
+						<li><a href="#" onclick="mudarModuloFrontEnd('HTML')">HTML</a></li>
+						<li><a href="#" onclick="mudarModuloFrontEnd('CSS')">CSS</a></li>
+						<li><a href="#" onclick="mudarModuloFrontEnd('Bootstrap')">Bootstrap</a></li>
+						<li><a href="#" onclick="mudarModuloFrontEnd('JavaScript')">JavaScript</a></li>
+						<li><a href="#" onclick="mudarModuloFrontEnd('React')">React</a></li>
+						<li><a th:href="@{/trilhas}" id="linkMenu">Voltar</a></li>
+					</ul>
+				</nav>
+
+				<div class="content">
+					<h1 id="tituloModulo">Boas-vindas à Jornada da Manipulação do Front-End!</h1>
+					<p id="conteudoModulo">É com grande entusiasmo que iniciamos esta jornada explorando os fundamentos
+						e as tecnologias essenciais que impulsionam o mundo do desenvolvimento web. Ao longo deste
+						curso, você terá a oportunidade de mergulhar em três módulos cruciais: HTML, CSS e JavaScript,
+						culminando em React,
+						uma biblioteca poderosa para construção de interfaces dinâmicas.
+					</p>
+
+					<a id="playlist" href="#" target="_blank">Iniciar o Curso</a>
+					<div class="imagem"><img src="/assets/img/other/front-end.jpg" alt=""></div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

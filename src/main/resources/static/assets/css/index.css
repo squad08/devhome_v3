@@ -1,0 +1,93 @@
+@import url(style.css);
+
+.carousel {
+	margin-bottom: 0rem;
+	position: relative;
+}
+
+.carousel-indicators {
+	position: absolute;
+	margin-right: 15%;
+	margin-bottom: 0.5rem;
+	margin-left: 15%;
+}
+
+.carousel-indicators .active {
+	background-color: var(--color-special);
+}
+
+.carousel-item {
+	height: 70vh;
+}
+
+#slide1 {
+	background-image: url(/assets/img/other/slide01.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+#slide2 {
+	background-image: url(/assets/img/other/slide02.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+#slide3 {
+	background-image: url(/assets/img/other/slide03.jpeg);
+	background-position: center;
+	background-size: cover;
+}
+
+rect {
+	fill: var(--translucid-special);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 6%;
+	color: #fd0000;
+	text-align: center;
+	background: 0 0;
+	border: 0;
+	opacity: .5;
+	transition: opacity .15s ease;
+}
+
+/* Heros */
+.chaves_logo {
+	font-size: var(--font-size-special);
+	color: var(--chaves_logo);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 100%;
+	cursor: none;
+	--bs-btn-hover-color: var(--btn-light);
+	--bs-btn-active-border-color: var(--btn-dark);
+	filter: drop-shadow(3px 3px 40px var(--color-special));
+}
+
+#btnHeros {
+	--bs-btn-color: var(--bg-default);
+	--bs-btn-bg: var(--color-special);
+	--bs-btn-border-color: var(--color-special);
+	--bs-btn-hover-color: var(--color-special);
+	--bs-btn-hover-bg: black;
+	--bs-btn-hover-border-color: black;
+	filter: drop-shadow(1px 1px 10px var(--color-special));
+}
+
+/* Hanging icons */
+.bi-house-door-fill,
+.bi-mortarboard-fill,
+.bi-gear-fill,
+.bi-person-plus-fill {
+	color: var(--color-special);
+}

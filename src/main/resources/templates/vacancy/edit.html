@@ -1,0 +1,82 @@
+<div th:replace="shared/head"></div>
+<link rel="stylesheet" href="/assets/css/menuAdm.css">
+<link rel="stylesheet" href="/assets/css/form.css">
+<link rel="stylesheet" href="/assets/css/table.css">
+<script src="/assets/script/menuAdm.js"></script>
+
+<body>
+	<main>
+		<div class="contentor">
+			<div th:replace="shared/menu :: dashboard"></div>
+
+			<div class="evento">
+				<div class="form-signin w-100 m-auto">
+					<div class="form-body">
+						<form class="form-row" th:action="@{/vaga/editar/{id} (id=${vacancy.id})}" th:object="${vacancy}"
+							method="post">
+
+							<a href="/">
+								<img class="mb-4" src="/assets/img/icon/icon-pink-2.png" alt="devHOME™ logo"
+									id="icon-logo">
+							</a>
+
+							<h1 class="h3 mb-3 fw-normal" id="typing-header">Editando Vaga</h1>
+
+							<div class="form-group">
+								<label for="id"> ID </label>
+								<input type="text" class="form-control" id="id" name="id" th:field="*{id}"
+									th:readonly="readonly">
+							</div>
+
+							<div class="form-group">
+								<label for="name"> Título da Vaga </label>
+								<input type="text" class="form-control" id="name"
+									placeholder="Digite o título da vaga " required th:field="*{name}">
+							</div>
+
+							<div class="form-group">
+								<label for="description"> Descrição da Vaga </label>
+								<input type="text" class="form-control" id="description"
+									placeholder="Digite a descrição da vaga" required th:field="*{description}">
+							</div>
+
+							<div class="form-group">
+								<label for="enterprise"> Selecione a Empresa </label>
+
+								<select class="form-control" id="enterprise" th:field="*{enterprise.id}" required>
+									<option th:each="enterprise : ${enterprise}" th:value="${enterprise.id}"
+										th:text="${enterprise.name}"></option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="address"> Localização </label>
+								<input type="text" class="form-control" id="address"
+									placeholder="Digite a Localização da vaga" required th:field="${enterprise.address}">
+							</div>
+
+							<div class="form-group">
+								<label for="birth"> Prazo de candidatura </label>
+								<input type="date" class="form-control" id="prazoCandidatura" placeholder="dd-MM-yyyy"
+									required th:field="*{prazoCandidatura}">
+							</div>
+
+							<div class="col-12 col-lg-auto d-grid gap-2 d-md-flex">
+								<button class="btn btn-primary py-2" type="submit"> Salvar </button>
+
+								<a th:href="@{/vaga/deletar/{id} (id=${vacancy.id})}" class="btn btn-danger"
+									th:onclick="'return confirm(\'Tem certeza que deseja excluir essa vaga?\');'">
+									Excluir
+								</a>
+							</div>
+
+							<p class="mt-5 mb-3 text-body-secondary"> © 2023 - devHOME™ </p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

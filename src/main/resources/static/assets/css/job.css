@@ -1,0 +1,25 @@
+@import url(style.css);
+
+#vagas {
+	margin-top: 100px;
+	font-family: var(--font-default);
+	color: var(--text-light);
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 20px;
+}
+
+th,
+td {
+	border: 1px solid var(--color-light);
+	text-align: left;
+	padding: 8px;
+}
+
+#tb {
+	font-family: var(--font-default);
+	color: var(--text-light);
+}

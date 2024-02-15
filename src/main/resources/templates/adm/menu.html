@@ -1,0 +1,42 @@
+<div th:replace="shared/head"></div>
+<link rel="stylesheet" href="/assets/css/menuAdm.css">
+<script src="/assets/script/menuAdm.js"></script>
+
+<body>
+	<div th:replace="shared/menu :: dashboard"></div>
+
+	<main>
+		<div class="d-flex">
+
+			<h1 class="display-5 fw-bold">Bem-vindo(a) ao Nosso Portal</h1>
+
+			<div class="col-lg-8 mx-auto">
+				<p class="lead">
+					É um prazer tê-lo(a) aqui! No nosso Portal ADM, você pode explorar uma
+					variedade de funcionalidades e ferramentas para tornar a sua experiência conosco ainda
+					mais completa.
+				</p>
+
+				<p class="lead mb-4">
+					Para começar, recomendamos que acesse o nosso Menu de Ferramentas, onde você poderá
+					encontrar diferentes opções de cadastros e interações personalizadas. Essas ferramentas
+					foram projetadas para facilitar o seu acesso a informações importantes e tornar a sua
+					navegação mais eficiente.
+
+					Sinta-se à vontade para explorar e utilizar as funcionalidades disponíveis. Se precisar
+					de ajuda ou tiver alguma dúvida, não hesite em entrar em contato conosco através do
+					nosso suporte do site.
+					<span class="enfase-text">devHOME™ sua casa da inovação</span>!
+				</p>
+
+				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+					<a th:href="@{/painel}">
+						<button type="button" class="btn btn-primary btn-lg px-4"> Sair </button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</main>
+</body>
+
+</html>

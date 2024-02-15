@@ -1,0 +1,68 @@
+<div th:replace="shared/head"></div>
+<link rel="stylesheet" href="/assets/css/contact.css">
+
+<body>
+	<div th:replace="shared/navbar"></div>
+
+	<main>
+		<section class="contato">
+			<div class="container">
+				<div class="esquerda">
+					<div class="form-wrapper">
+
+						<div class="contato-heading">
+							<h1>Vamos trabalhar juntos<span class="enfase-text">.</span></h1>
+						</div>
+
+						<form action="index.html" method="post" class="contato-form">
+							<div class="input-wrap">
+								<input class="contato-input" autocomplete="off" name="Primeiro Nome" type="text"
+									required>
+								<label>Primeiro nome</label>
+								<i class="icon fa-solid fa-address-card"></i>
+							</div>
+
+							<div class="input-wrap">
+								<input class="contato-input" autocomplete="off" name="Sobrenome" type="text" required>
+								<label>Sobrenome</label>
+								<i class="icon fa-solid fa-address-card"></i>
+							</div>
+
+							<div class="input-wrap w-100">
+								<input class="contato-input" autocomplete="off" name="Email" type="text" required>
+								<label>Email</label>
+								<i class="icon fa-solid fa-envelope"></i>
+							</div>
+
+							<div class="input-wrap textarea w-100">
+								<textarea name="Mensagem" autocomplete="off" class="contato-input" required></textarea>
+								<label>Mensagem</label>
+								<i class="icon fa-solid fa-inbox"></i>
+							</div>
+
+							<div class="contato-botoes">
+								<button class="btn upload" id="btn-upload">
+									<span><i class="fa-solid fa-paperclip"></i>Add arquivo</span>
+									<input type="file" name="arquivo">
+								</button>
+								<input type="submit" value="Enviar Mensagem" class="btn" id="btn-enviar">
+							</div>
+						</form>
+					</div>
+
+					<div class="contato-map">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1669.3644024390635!2d-43.18686389999998!3d-22.966487199999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bd55bb5586c5f%3A0xab6590b555652291!2sRua%20Siqueira%20Campos%2C%20120%20-%20Copacabana%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022031-072!5e1!3m2!1spt-BR!2sbr!4v1693482074070!5m2!1spt-BR!2sbr"
+							width="600%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade">
+						</iframe>
+					</div>
+				</div>
+		</section>
+	</main>
+
+	<div th:replace="shared/footer"></div>
+
+</body>
+
+</html>

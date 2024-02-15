@@ -1,0 +1,62 @@
+<div th:replace="shared/head"></div>
+<link rel="stylesheet" href="/assets/css/adm.css">
+
+<body>
+	<div th:replace="shared/navbar"></div>
+
+	<main>
+		<div class="container-fluid d-flex align-items-center">
+			<div class="container-xxl d-flex justify-content-center flex-wrap gap-5">
+
+				<div class=" text-center">
+					<h1 class="display-5 fw-bold" id="typing-header">Painel Administrativo</h1>
+				</div>
+
+				<div class="container col-xxl-8 ">
+					<div class="row flex-lg-row align-items-center">
+
+						<div class="col-lg-2 offset-lg-1">
+							<a th:href="@{/menu}" class="chaves_logo btn" type="button">{<i
+									class="bi bi-house-door-fill"></i>}</a>
+						</div>
+
+						<div class="col-lg-8 offset-lg-1">
+							<p class="lead">
+								Bem-vindo à Sala de Controle da devHOME™, o coração pulsante onde as ideias
+								se
+								transformam em
+								realidade. Aqui, nossa equipe administra com paixão e precisão, moldando o
+								futuro da
+								inovação
+								digital. Sinta-se em casa enquanto exploramos juntos os bastidores que
+								impulsionam nosso
+								progresso.
+							</p>
+
+							<p class="lead">
+								Na área administrativa da devHOME™, moldamos o futuro da inovação. Nossos
+								setores
+								estratégicos
+								abrangem desde o registro de cursos, fortalecendo o alicerce do
+								conhecimento, até a
+								parceria com
+								empresas que compartilham nossa visão. Além disso, conectamos talentos a
+								oportunidades
+								através
+								do gerenciamento de vagas de emprego. Cada setor, uma engrenagem essencial
+								no motor do
+								progresso, alinhado com nossa missão de transformar ideias em realidade.
+								devHOME™ <span class="enfase-text">sua casa da inovação!</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<div th:replace="shared/footer"></div>
+
+</body>
+
+</html>
