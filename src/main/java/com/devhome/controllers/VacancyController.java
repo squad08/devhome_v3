@@ -32,14 +32,8 @@ public class VacancyController {
 	public String list(Model model) {
 		List<Vacancy> vacancy = vacancyService.getAllVaga();
 		model.addAttribute("vacancy", vacancy);
+		model.addAttribute("title", " Lista de vagas ");
 		return "vacancy/list";
-	}
-
-	@GetMapping(value = { "oportunidades", "opportunity" })
-	public String others(Model model) {
-		List<Vacancy> vacancy = vacancyService.getAllVaga();
-		model.addAttribute("vacancy", vacancy);
-		return "vacancy/opportunity";
 	}
 
 	@GetMapping(value = { "novo", "new" })
@@ -48,6 +42,7 @@ public class VacancyController {
 		List<Enterprise> enterprise = enterpriseService.getAllEnterprise();
 		model.addAttribute("vacancy", vacancy);
 		model.addAttribute("enterprise", enterprise);
+		model.addAttribute("title", " Cadastro de vaga ");
 		return "vacancy/cadastre";
 	}
 
@@ -63,18 +58,27 @@ public class VacancyController {
 		List<Enterprise> enterprise = enterpriseService.getAllEnterprise();
 		model.addAttribute("vacancy", vacancy);
 		model.addAttribute("enterprise", enterprise);
+		model.addAttribute("title", " Editar vaga ");
 		return "vacancy/edit";
 	}
 
-	@PostMapping("editar/{id}")
+	@PostMapping(value = { "editar/{id}", "edit/{id}" })
 	public String update(@PathVariable Long id, @ModelAttribute Vacancy vacancy) {
 		vacancyService.update(id, vacancy);
 		return "redirect:/vaga";
 	}
 
-	@GetMapping("deletar/{id}")
+	@GetMapping(value = { "deletar/{id}", "delete/{id}" })
 	public String delete(@PathVariable Long id) {
 		vacancyService.delete(id);
 		return "redirect:/vaga";
+	}
+
+	@GetMapping(value = { "oportunidades", "opportunity" })
+	public String others(Model model) {
+		List<Vacancy> vacancy = vacancyService.getAllVaga();
+		model.addAttribute("vacancy", vacancy);
+		model.addAttribute("title", " Vagas ");
+		return "vacancy/opportunity";
 	}
 }

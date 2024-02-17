@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;700&display=swap');
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 @import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 :root {
 	--font-default: "Poppins", sans-serif;
@@ -55,19 +55,32 @@
 			rgba(33, 37, 41, .5));
 
 	--gradient-special: linear-gradient(to right,
-			var(--bg-other),
-			var(--bg-special));
+			var(--bg-special),
+			var(--bg-light));
 }
 
 *,
 ::after,
 ::before {
-	font-family: var(--font-family-default);
-	font-size: var(--font-size-default);
-
+	font-family: var(--font-default);
+	/*	font-size: var(--font-size-default);*/
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
+	border: 0;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.d-flex {
+	display: flex !important;
+}
+
+.align-items-center {
+	align-items: center !important;
 }
 
 .navbar {
@@ -102,6 +115,19 @@
 	transform: scale(1.05);
 }
 
+.chaves_logo {
+	font-size: var(--font-size-special);
+	color: var(--chaves_logo);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 100%;
+	cursor: none;
+	--bs-btn-hover-color: var(--btn-light);
+	--bs-btn-active-border-color: var(--btn-dark);
+	filter: drop-shadow(3px 3px 40px var(--color-special));
+}
+
 a:link {
 	color: var(--text-light);
 	text-decoration: none;
@@ -112,6 +138,7 @@ a:hover {
 }
 
 .bi-three-dots-vertical,
+.bi-list,
 .bi-c-circle,
 .bi-arrow-up-short {
 	color: var(--icon-special);
@@ -130,7 +157,7 @@ a:hover {
 }
 
 .enfase-text {
-	font-family: var(--font-family-special);
+	font-family: var(--font-special);
 	font-size: var(--font-size-special);
 	font-weight: var(--font-weight-special);
 	color: var(--text-special);

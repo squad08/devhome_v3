@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
@@ -32,20 +33,20 @@ public class User {
 	@Column(name = "id")
 	private Long id;
 
-    @Column(nullable = false, length = 80)
+	@Column(nullable = false, length = 80)
 	private String name;
 
 	@Column(nullable = true, name = "birth")
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate birth;
 
-    @Column(nullable = false, length = 14, unique = true)
+	@Column(nullable = false, length = 14, unique = true)
 	private String cpf;
 
-    @Column(nullable = true, length = 15)
+	@Column(nullable = true, length = 15)
 	private String contact;
 
-    @Column(nullable = false, length = 80, unique = true)
+	@Column(nullable = false, length = 80, unique = true)
 	private String email;
 
 	@Column(nullable = false)
@@ -80,64 +81,64 @@ public class User {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long value) {
+		this.id = value;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String value) {
+		this.name = value;
 	}
 
 	public LocalDate getBirth() {
 		return birth;
 	}
 
-	public void setBirth(LocalDate birth) {
-		this.birth = birth;
+	public void setBirth(LocalDate value) {
+		this.birth = value;
 	}
 
 	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+	public void setCpf(String value) {
+		this.cpf = value;
 	}
 
 	public String getContact() {
 		return contact;
 	}
 
-	public void setContact(String contact) {
-		this.contact = contact;
+	public void setContact(String value) {
+		this.contact = value;
 	}
 
 	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmail(String value) {
+		this.email = value;
 	}
 
 	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String value) {
+		this.password = value;
 	}
 
 	public byte[] getImgBytes() {
 		return imgBytes;
 	}
 
-	public void setImgBytes(byte[] imgBytes) {
-		this.imgBytes = imgBytes;
+	public void setImgBytes(byte[] value) {
+		this.imgBytes = value;
 	}
 
 	public void setImg(MultipartFile img) throws IOException {
@@ -148,8 +149,32 @@ public class User {
 		return role;
 	}
 
-	public void setRole(List<Role> role) {
-		this.role = role;
+	public void setRole(List<Role> value) {
+		this.role = value;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(imgBytes);
+		result = prime * result + Objects.hash(birth, contact, cpf, email, id, name, password, role);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		return Objects.equals(birth, other.birth) && Objects.equals(contact, other.contact)
+				&& Objects.equals(cpf, other.cpf) && Objects.equals(email, other.email) && Objects.equals(id, other.id)
+				&& Arrays.equals(imgBytes, other.imgBytes) && Objects.equals(name, other.name)
+				&& Objects.equals(password, other.password) && Objects.equals(role, other.role);
 	}
 
 	@Override

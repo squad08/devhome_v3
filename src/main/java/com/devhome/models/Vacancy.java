@@ -1,8 +1,10 @@
 package com.devhome.models;
 
-import java.util.Date;
+import java.time.LocalDateTime;
+import java.util.Objects;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -28,8 +30,9 @@ public class Vacancy {
 	@Column(nullable = false)
 	private String description;
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date candidacy;
+	@Column(nullable = false)
+	@DateTimeFormat(iso = ISO.DATE)
+	private LocalDateTime candidacy = LocalDateTime.now();
 
 	public enum Sector {
 		Frontend, Backend, Fullstack
@@ -71,11 +74,11 @@ public class Vacancy {
 		this.description = description;
 	}
 
-	public Date getCandidacy() {
+	public LocalDateTime getCandidacy() {
 		return candidacy;
 	}
 
-	public void setCandidacy(Date candidacy) {
+	public void setCandidacy(LocalDateTime candidacy) {
 		this.candidacy = candidacy;
 	}
 
@@ -93,6 +96,25 @@ public class Vacancy {
 
 	public void setEnterprise(Enterprise enterprise) {
 		this.enterprise = enterprise;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(candidacy, description, enterprise, id, name, sector);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Vacancy other = (Vacancy) obj;
+		return Objects.equals(candidacy, other.candidacy) && Objects.equals(description, other.description)
+				&& Objects.equals(enterprise, other.enterprise) && Objects.equals(id, other.id)
+				&& Objects.equals(name, other.name) && sector == other.sector;
 	}
 
 	@Override

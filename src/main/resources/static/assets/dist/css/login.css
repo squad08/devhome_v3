@@ -1,0 +1,47 @@
+@import url(style.css);
+
+.py-4 {
+	padding-top: 1.5rem !important;
+	padding-bottom: 1.5rem !important;
+}
+
+.form-signin {
+	max-width: 330px;
+	padding: 1rem;
+	margin: auto !important;
+}
+
+.w-100 {
+	width: 100% !important;
+}
+
+.m-auto {
+	margin: auto !important;
+}
+
+.form-floating>.form-control,
+.form-floating>.form-control-plaintext {
+	padding: 1rem .75rem;
+}
+
+.form-signin input[type="email"] {
+	margin-bottom: -1px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+	margin-bottom: 10px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.form-check-input:checked {
+	background-color: var(--bg-special);
+	border-color: var(--btn-special);
+}
+
+.login {
+	margin-top: 40px;
+	text-decoration: none;
+}

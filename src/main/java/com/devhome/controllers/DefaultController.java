@@ -9,73 +9,73 @@ public class DefaultController {
 
 	@GetMapping(value = { "/", "inicio", "home" })
 	public String index(Model model) {
-		model.addAttribute("title", " Início ・ DevHOME™ ");
+		model.addAttribute("title", " Início ");
 		return "index";
 	}
 
 	@GetMapping(value = { "sobre", "about" })
 	public String about(Model model) {
-		model.addAttribute("title", " Sobre ・ DevHOME™ ");
+		model.addAttribute("title", " Sobre ");
 		return "default/about";
 	}
 
 	@GetMapping(value = { "servico", "service" })
 	public String services(Model model) {
-		model.addAttribute("title", " Serviços ・ DevHOME™ ");
-		return "default/services";
+		model.addAttribute("title", " Serviços ");
+		return "default/service";
 	}
 
 	@GetMapping(value = { "contato", "contact" })
 	public String contact(Model model) {
-		model.addAttribute("title", " Contato ・ DevHOME™ ");
+		model.addAttribute("title", " Contato ");
 		return "default/contact";
 	}
 
 //	@GetMapping(value = { "perguntas-frequentes", "faq"})
 //	public String contact(Model model) {
-//		model.addAttribute("title", " FAQ ・ DevHOME™ ");
+//		model.addAttribute("title", " FAQ ");
 //		return "default/faq";
 //	}
 
 	@GetMapping(value = { "entrar", "login" })
 	public String login(Model model) {
-		model.addAttribute("title", " Entrar ・ DevHOME™ ");
+		model.addAttribute("title", " Entrar ");
 		return "user/login";
 	}
 
 	@GetMapping(value = { "painel", "dashboard" })
 	public String adm(Model model) {
-		model.addAttribute("title", " Painel ADM ・ DevHOME™ ");
+		model.addAttribute("title", " Painel ADM ");
 		return "adm/dashboard";
 	}
 
 	@GetMapping("menu")
 	public String menu(Model model) {
-		model.addAttribute("title", " Menu ADM ・ DevHOME™ ");
+		model.addAttribute("title", " Menu ADM ");
 		return "adm/menu";
 	}
 
-	@GetMapping("trilhas")
+	@GetMapping(value = { "trilhas", "trails" })
 	public String modules(Model model) {
-		model.addAttribute("title", " Trilhas ・ DevHOME™ ");
+		model.addAttribute("title", " Trilhas ");
 		return "course/trilhas";
 	}
 
 	@GetMapping("frontend")
 	public String moduleFront(Model model) {
-		model.addAttribute("title", " Front-End ・ DevHOME™ ");
+		model.addAttribute("title", " Front-End ");
 		return "course/frontend";
 	}
 
 	@GetMapping("backend")
 	public String moduleBck(Model model) {
-		model.addAttribute("title", " Back-End ・ DevHOME™ ");
+		model.addAttribute("title", " Back-End ");
 		return "course/backend";
 	}
 
 	@GetMapping("fullstack")
 	public String moduleFullstacl(Model model) {
-		model.addAttribute("title", " Full-Stack ・ DevHOME™");
+		model.addAttribute("title", " Full-Stack ");
 		return "course/fullstack";
 	}
 

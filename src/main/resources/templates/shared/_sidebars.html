@@ -1,0 +1,92 @@
+<div class="d-flex top-0 start-0 mx-4 my-4 bd-mode-toggle">
+	<button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+		aria-controls="offcanvasWithBothOptions" aria-label="Toggle navigation">
+
+		<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-list"
+			viewBox="0 0 16 16">
+			<path fill-rule="evenodd"
+				d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+		</svg>
+	</button>
+</div>
+
+<div class="offcanvas offcanvas-start flex-grow-1" data-bs-scroll="false" tabindex="-1" id="offcanvasWithBothOptions"
+	aria-labelledby="offcanvasWithBothOptionsLabel">
+
+	<div class="offcanvas-header px-4 pb-0">
+		<h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+			<span class="gradient-text">devHOME™</span>
+		</h5>
+
+		<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+			data-bs-target="#offcanvasWithBothOptions">
+		</button>
+	</div>
+
+	<hr>
+
+	<div class="offcanvas-body d-flex flex-column flex-shrink-0">
+		<ul class="nav nav-pills flex-column mb-auto">
+
+			<li class="nav-item">
+				<a th:href="@{/usuario}" class="nav-link" aria-current="page">
+					<lord-icon src="https://cdn.lordicon.com/spukaklw.json" trigger="hover" colors="primary:#ff0066"
+						style="width:35px;height:35px">
+					</lord-icon>
+
+					Usuários
+				</a>
+			</li>
+
+			<li class="nav-item">
+				<a th:href="@{/empresa}" class="nav-link" aria-current="page">
+					<lord-icon src="https://cdn.lordicon.com/uwinmnkh.json" trigger="hover" colors="primary:#ff0066"
+						style="width:30px;height:30px">
+					</lord-icon>
+
+					Empresas
+				</a>
+			</li>
+
+			<li class="nav-item">
+				<a th:href="@{/vaga}" class="nav-link" aria-current="page">
+					<lord-icon src="https://cdn.lordicon.com/lxrsqlrx.json" trigger="hover" colors="primary:#ff0066"
+						style="width:30px;height:30px">
+					</lord-icon>
+
+					Vagas
+				</a>
+			</li>
+
+			<li class="nav-item">
+				<a th:href="@{/painel}" class="nav-link" aria-current="page">
+					<lord-icon src="https://cdn.lordicon.com/whtfgdfm.json" trigger="hover" colors="primary:#ff0066"
+						style="width:30px;height:30px">
+					</lord-icon>
+
+					Sair
+				</a>
+			</li>
+		</ul>
+
+		<hr>
+
+		<div class="dropdown">
+			<a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+				data-bs-toggle="dropdown" aria-expanded="false">
+				<img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+				<strong>Levi Figueiredo</strong>
+			</a>
+
+			<ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+				<li><a class="dropdown-item" href="#">Novo Projeto</a></li>
+				<li><a class="dropdown-item" href="#">Configurações</a></li>
+				<li><a class="dropdown-item" href="#">Perfil</a></li>
+				<li>
+					<hr class="dropdown-divider">
+				</li>
+				<li><a class="dropdown-item" th:href="@{/}">Sair</a></li>
+			</ul>
+		</div>
+	</div>
+</div>

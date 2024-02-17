@@ -1,0 +1,83 @@
+<div th:replace="shared/_head"></div>
+<link rel="stylesheet" href="../assets/dist/css/service.css">
+
+<body>
+	<div th:replace="shared/_navbar"></div>
+
+	<main class="row row-12">
+		<div class="">
+			<div class="">
+				<h1 class="display-4 fw-bold lh-1">
+					Bem-vindo à DevHome - Sua Casa de Inovação
+				</h1>
+
+				<p class="lead">
+					Na DevHome, estamos comprometidos em transformar sua jornada no mundo da tecnologia em
+					uma experiência única e significativa. Seja você um entusiasta em busca de conhecimento ou um
+					profissional procurando oportunidades empolgantes, você está no lugar certo!
+				</p>
+			</div>
+
+			<div class="">
+				<img class="d-block mx-lg-auto img-fluid" src="/assets/img/other/descubra.png" alt="Bootstrap Themes"
+					width="700" height="500">
+			</div>
+
+			<div class="">
+				<div class="">
+					<h1 class="">
+						Explore nossa trilha aprendizado
+					</h1>
+
+					<p class="lead">
+						Aprimore suas habilidades e fique à frente no cenário tecnológico em constante evolução.
+						Navegue por nossos cursos especializados, desenvolvidos para impulsionar sua carreira. Da
+						programação de software à inteligência artificial, oferecemos conhecimento prático para levar
+						suas
+						habilidades a novos patamares.
+					</p>
+				</div>
+
+				<div class="">
+					<img class="d-block mx-lg-auto img-fluid" src="/assets/img/other/cursos.jpg" alt="Bootstrap Themes"
+						width="700" height="500">
+				</div>
+
+				<div class="">
+					<a th:href="@{trilhas}">
+						<button type="button" class="btn btn-primary"> Cursos </button>
+					</a>
+				</div>
+			</div>
+
+			<div class="">
+				<h1 class="">
+					Descubra Oportunidades Profissionais
+				</h1>
+
+				<p class="lead">
+					Aprimore suas habilidades e fique à frente no cenário tecnológico em constante evolução. Navegue
+					por nossos cursos especializados, desenvolvidos para impulsionar sua carreira. Da programação de
+					software à inteligência artificial, oferecemos conhecimento prático para levar suas habilidades
+					a novos patamares.
+				</p>
+			</div>
+
+			<div class="">
+				<img class="d-block mx-lg-auto img-fluid" src="/assets/img/other/job.jpg" alt="Bootstrap Themes"
+					width="700" height="500">
+			</div>
+
+			<div class="">
+				<a th:href="@{vaga/oportunidades}">
+					<button type="button" class="btn btn-primary"> Vagas </button>
+				</a>
+			</div>
+		</div>
+	</main>
+
+	<div th:replace="shared/_footer"></div>
+
+</body>
+
+</html>

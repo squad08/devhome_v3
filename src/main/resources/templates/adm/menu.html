@@ -1,38 +1,54 @@
-<div th:replace="shared/head"></div>
-<link rel="stylesheet" href="/assets/css/menuAdm.css">
-<script src="/assets/script/menuAdm.js"></script>
+<div th:replace="shared/_head"></div>
+<link rel="stylesheet" href="../assets/dist/css/menuAdm.css">
 
 <body>
-	<div th:replace="shared/menu :: dashboard"></div>
+	<div th:replace="shared/_sidebars"></div>
 
 	<main>
-		<div class="d-flex">
+		<div class="container-fluid d-flex align-items-center">
+			<div class="container-xxl d-flex justify-content-center flex-wrap gap-5">
+				<div class=" text-center">
+					<h1 class="display-5 fw-bold" id="typing-header">Bem-vindo(a) ao Nosso Portal</h1>
+				</div>
 
-			<h1 class="display-5 fw-bold">Bem-vindo(a) ao Nosso Portal</h1>
+				<div class="container col-xxl-8 ">
+					<div class="row flex-lg-row align-items-center">
 
-			<div class="col-lg-8 mx-auto">
-				<p class="lead">
-					É um prazer tê-lo(a) aqui! No nosso Portal ADM, você pode explorar uma
-					variedade de funcionalidades e ferramentas para tornar a sua experiência conosco ainda
-					mais completa.
-				</p>
+						<div class="col-lg-2 offset-lg-1">
+							<a th:href="@{/painel}">
+								<button type="button" class="btn btn-primary btn-lg px-4"> Sair </button>
+							</a>
+						</div>
 
-				<p class="lead mb-4">
-					Para começar, recomendamos que acesse o nosso Menu de Ferramentas, onde você poderá
-					encontrar diferentes opções de cadastros e interações personalizadas. Essas ferramentas
-					foram projetadas para facilitar o seu acesso a informações importantes e tornar a sua
-					navegação mais eficiente.
+						<div class="col-lg-8 offset-lg-1">
 
-					Sinta-se à vontade para explorar e utilizar as funcionalidades disponíveis. Se precisar
-					de ajuda ou tiver alguma dúvida, não hesite em entrar em contato conosco através do
-					nosso suporte do site.
-					<span class="enfase-text">devHOME™ sua casa da inovação</span>!
-				</p>
+							<p class="lead">
+								É um prazer tê-lo(a) aqui! No nosso Portal ADM, você pode explorar uma variedade de
+								funcionalidades e ferramentas para tornar a sua experiência conosco ainda mais
+								completa.
+							</p>
 
-				<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-					<a th:href="@{/painel}">
-						<button type="button" class="btn btn-primary btn-lg px-4"> Sair </button>
-					</a>
+							<p class="lead">
+								Para começar, recomendamos que acesse o nosso Menu de Ferramentas, onde você poderá
+								encontrar
+								diferentes opções de cadastros e interações personalizadas. Essas ferramentas foram
+								projetadas
+								para facilitar o seu acesso a informações importantes e tornar a sua navegação mais
+								eficiente.
+							</p>
+
+							<p class="lead">
+								Sinta-se à vontade para explorar e utilizar as funcionalidades disponíveis. Se
+								precisar
+								de ajuda
+								ou tiver alguma dúvida, não hesite em entrar em contato conosco através do nosso
+								suporte
+								do
+								site. devHOME™ sua casa da inovação!
+							</p>
+
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

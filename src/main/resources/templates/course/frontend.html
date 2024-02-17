@@ -1,9 +1,5 @@
-<div th:replace="shared/head"></div>
-<link rel="stylesheet" href="/assets/css/menu.css">
-<link rel="stylesheet" href="/assets/css/modules.css">
-<script src="/assets/script/menu.js"></script>
-<script src="/assets/script/module.js"></script>
-<script src="/assets/script/moduleFullStack.js"></script>
+<div th:replace="shared/_head"></div>
+<link rel="stylesheet" href="../assets/dist/css/menuUser.css">
 
 <body>
 	<main>
@@ -22,7 +18,13 @@
 						<li><a href="#" onclick="mudarModuloFrontEnd('Bootstrap')">Bootstrap</a></li>
 						<li><a href="#" onclick="mudarModuloFrontEnd('JavaScript')">JavaScript</a></li>
 						<li><a href="#" onclick="mudarModuloFrontEnd('React')">React</a></li>
-						<li><a th:href="@{/trilhas}" id="linkMenu">Voltar</a></li>
+						<li>
+							<a th:href="@{/trilhas}" class="nav-link" aria-current="page">
+								<lord-icon src="https://cdn.lordicon.com/whtfgdfm.json" trigger="hover"
+									colors="primary:#ff0066" style="width:30px;height:30px">
+								</lord-icon> Sair
+							</a>
+						</li>
 					</ul>
 				</nav>
 

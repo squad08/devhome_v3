@@ -28,36 +28,39 @@ public class EnterpriseController {
 	public String list(Model model) {
 		List<Enterprise> enterprise = enterpriseService.getAllEnterprise();
 		model.addAttribute("enterprise", enterprise);
+		model.addAttribute("title", " Lista de empresas ");
 		return "enterprise/list";
 	}
 
-	@GetMapping("novo")
+	@GetMapping(value = { "novo", "new" })
 	public String showFormForAdd(Model model) {
 		Enterprise enterprise = new Enterprise();
 		model.addAttribute("enterprise", enterprise);
+		model.addAttribute("title", " Cadastro de empresa ");
 		return "enterprise/cadastre";
 	}
 
-	@PostMapping("novo")
+	@PostMapping(value = { "novo", "new" })
 	public String create(@ModelAttribute @Validated Enterprise enterprise, BindingResult result) {
 		enterpriseService.create(enterprise);
 		return "redirect:/empresa";
 	}
 
-	@GetMapping("editar/{id}")
+	@GetMapping(value = { "editar/{id}", "edit/{id}" })
 	public String showFormForUpdate(@PathVariable Long id, Model model) {
 		Enterprise enterprise = enterpriseService.getById(id);
 		model.addAttribute("enterprise", enterprise);
+		model.addAttribute("title", " Editar empresa ");
 		return "enterprise/edit";
 	}
 
-	@PostMapping("editar/{id}")
+	@PostMapping(value = { "editar/{id}", "edit/{id}" })
 	public String update(@PathVariable Long id, @ModelAttribute Enterprise enterprise) {
 		enterpriseService.update(id, enterprise);
 		return "redirect:/empresa";
 	}
 
-	@GetMapping("deletar/{id}")
+	@GetMapping(value = { "deletar/{id}", "delete/{id}" })
 	public String delete(@PathVariable Long id, Model model) {
 		try {
 			enterpriseService.delete(id);

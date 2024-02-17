@@ -1,10 +1,9 @@
 package com.devhome.models;
 
-import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -12,6 +11,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
 public class Enterprise {
@@ -30,8 +31,9 @@ public class Enterprise {
 	@Column(columnDefinition = "TEXT")
 	private String sector;
 
-	@DateTimeFormat(iso = ISO.DATE)
-	private LocalDate foundation;
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy/MM/dd")
+	private Date foundation;
 
 	@Column(nullable = false)
 	private String contact;
@@ -49,7 +51,7 @@ public class Enterprise {
 
 	}
 
-	public Enterprise(Long id, String name, String cnpj, String sector, LocalDate foundation, String contact,
+	public Enterprise(Long id, String name, String cnpj, String sector, Date foundation, String contact,
 			String address, String email, List<Vacancy> vacancy) {
 		this.id = id;
 		this.name = name;
@@ -94,11 +96,11 @@ public class Enterprise {
 		this.sector = sector;
 	}
 
-	public LocalDate getFoundation() {
+	public Date getFoundation() {
 		return foundation;
 	}
 
-	public void setFoundation(LocalDate foundation) {
+	public void setFoundation(Date foundation) {
 		this.foundation = foundation;
 	}
 
@@ -132,6 +134,13 @@ public class Enterprise {
 
 	public void setVacancy(List<Vacancy> vacancy) {
 		this.vacancy = vacancy;
+	}
+
+	@Override
+	public String toString() {
+		return "Enterprise [id=" + id + ", name=" + name + ", cnpj=" + cnpj + ", sector=" + sector + ", foundation="
+				+ foundation + ", contact=" + contact + ", address=" + address + ", email=" + email + ", vacancy="
+				+ vacancy + "]";
 	}
 
 }

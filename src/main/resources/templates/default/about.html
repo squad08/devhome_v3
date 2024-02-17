@@ -1,71 +1,147 @@
-<div th:replace="shared/head"></div>
-<link rel="stylesheet" href="/assets/css/style.css">
+<div th:replace="shared/_head"></div>
+<link rel="stylesheet" href="../assets/dist/css/about.css">
 
 <body>
-	<div th:replace="shared/navbar"></div>
+	<div th:replace="shared/_navbar"></div>
 
 	<main>
-		<div class="container-fluid d-flex align-items-center">
+		<div class="container-fluid d-flex align-items-center my-5">
 			<div class="container-xxl d-flex justify-content-center flex-wrap gap-5">
-				<div class="container-fluid" id="banner">
 
+				<div class="container  text-center my-5">
 					<div class="col text-center">
-						<h1 class="fw-bold">A melhor escolha se faz aqui.</h1>
+						<h1 class="fw-bold">Ligamos o liguidificador.. <span class="enfase-text">ARGH</span></h1>
 
-						<p class="lead fs-2">
-							"Estamos à procura de criativos inteligentes, cheios de energia positiva e
-							uma paixão
-							por construir produtos que as pessoas adoram..."
+						<p class="lead fs-4">
+							"Seja bem-vindo à nossa casa de software, onde misturamos talento e inovação, como
+							ingredientes em um liquidificador, para criar soluções únicas e eficientes..."
 						</p>
 					</div>
+					<img class="img-fluid my-3" alt="Imagem" src="../assets/img/other/mixer.svg">
 				</div>
-				<img class="img-fluid" alt="Imagem" src="/assets/img/other/mixer.svg">
 
+				<section class="container my-5">					
+					<div class="container ">
+						<div class="row justify-content-center align-items-center my-5">
+							<div class="col-lg-3">
+								<script src="https://cdn.lordicon.com/lordicon.js"></script>
+								<lord-icon src="https://cdn.lordicon.com/txbgsuya.json" trigger="hover" stroke="light"
+									style="width:150px;height:150px">
+								</lord-icon>
+							</div>
 
-				<!--				<a class="btn btn-outline-primary" href="#history" role="button">Saiba mais</a>-->
+							<div class="col-8">
+								<h1 class="">
+									 Missão
+								</h1>
 
-				<section>
-					<h2 class="title">Diferenciais</h2>
+								<p class="lead">
+									A missão da DevHome é capacitar profissionais de tecnologia e desenvolvimento de
+									software, fornecendo-lhes uma experiência prática e imersiva que os prepara para
+									enfrentar desafios reais do mercado de trabalho. Buscamos promover o crescimento
+									pessoal
+									e profissional de nossos residentes, fornecendo-lhes as habilidades e conhecimentos
+									necessários para alcançarem sucesso em suas carreiras.
+								</p>
+							</div>
+						</div>
 
-					<div id="card-area">
-						<div class="wrapper">
-							<div class="box-area">
-								<div class="box">
-									<img alt="" src="/assets/img/other/sobre-integração.jpg">
+						<div class="row justify-content-center align-items-center my-5">
+							<div class="col-lg-3">
+								<script src="https://cdn.lordicon.com/lordicon.js"></script>
+								<lord-icon src="https://cdn.lordicon.com/fmjvulyw.json" trigger="hover" stroke="light"
+									style="width:150px;height:150px">
+								</lord-icon>
+							</div>
 
-									<div class="overlay">
-										<h3> Integração ao Mercado </h3>
+							<div class="col-8">
+								<h1 class="">
+									 Visão
+								</h1>
 
-										<p>
-											Integrar os residentes aos desafios atuais do mercado de trabalho em
-											Desenvolvimento de Software.
-										</p>
+								<p class="lead">
+									Nossa visão é sermos reconhecidos como uma referência em residência em software,
+									transformando a maneira como os profissionais de tecnologia são capacitados e
+									preparados
+									para o mercado de trabalho. Buscamos criar um ambiente de aprendizado dinâmico e
+									colaborativo, onde os residentes possam crescer, inovar e se destacar como líderes
+									em
+									suas áreas de atuação.
+								</p>
+							</div>
+						</div>
+
+						<div class="row justify-content-center align-items-center my-5">
+							<div class="col-lg-3">
+								<script src="https://cdn.lordicon.com/lordicon.js"></script>
+								<lord-icon src="https://cdn.lordicon.com/dypzookn.json" trigger="hover" stroke="light"
+									style="width:150px;height:150px">
+								</lord-icon>
+							</div>
+
+							<div class="col-8">
+								<h1 class="">
+									Valores
+								</h1>
+
+								<p class="lead">
+									Excelência: Compromisso com qualidade e busca contínua pela excelência.
+									Colaboração: Valorização do trabalho em equipe para alcançar resultados
+									significativos.
+									Inovação: Busca constante por soluções criativas e progresso tecnológico.
+									Empoderamento: Fornecimento de recursos para capacitar profissionais a atingir seu
+									potencial máximo.
+									Integridade: Atuação com ética e respeito em todas as interações profissionais.
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="container my-5">
+					<div class="my-5">
+						<h2 class="fw-bold">"Equipe instanciada!"</h2>
+
+						<div class="row row-cols-8">
+							<div id="card-area">
+								<div class="box-area">
+									<div class="col col-md-12 box">
+										<img alt="" src="../assets/img/other/leo.png">
+
+										<div class="overlay">
+											<h3> Missão </h3>
+
+											<p>
+												Capacitar profissionais de tecnologia para enfrentar desafios reais
+												e
+												encontrar vagas rapidamente.
+											</p>
+										</div>
 									</div>
-								</div>
 
-								<div class="box">
-									<img alt="" src="/assets/img/other/sobre-metodologia.jpg">
+									<div class="col col-md-12 box">
+										<img alt="" src="../assets/img/other/levi.png">
 
-									<div class="overlay">
-										<h3> Metodologia Inovadora </h3>
-										<p>
-											Imersão em equipes de trabalho para solução de problemas reais
-											acompanhados
-											por especialistas na área.
-										</p>
+										<div class="overlay">
+											<h3> Visão </h3>
+											<p>
+												Ser referência na transformação da capacitação de profissionais de
+												tecnologia.
+											</p>
+										</div>
 									</div>
-								</div>
 
-								<div class="box">
-									<img alt="" src="/assets/img/other/sobre-oportunidades.jpg">
+									<div class="col col-md-12 box">
+										<img alt="" src="../assets/img/other/lucas.png">
 
-									<div class="overlay">
-										<h3> Networking e Oportunidades </h3>
-										<p>
-											Oportunidades de trabalho em equipe em contato com instrutores
-											especialistas
-											inseridos no mercado de trabalho.
-										</p>
+										<div class="overlay">
+											<h3> Valores </h3>
+											<p>
+												Excelência, Colaboração, Inovação, Empoderamento, Integridade,
+												Satisfação e
+												Conhecimento.
+											</p>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -73,58 +149,62 @@
 					</div>
 				</section>
 
-				<section id="history">
-				</section>
+				<div class="row row-10 align-items-center rounded-3 border text-center my-5">
+					<div class="col">
 
-				<section>
-					<img src="/assets/img/other/......." alt="Residência em Software">
+						<section class="container text-center my-5">
+							<div class="row">
+								<h2>Empresas esperando por você!</h2>
 
-					<h2>O que é um programa de residência de software?</h2>
-					<p>
-						A residência é um programa de desenvolvimento acelerado de capital humano, montado a
-						partir de
-						necessidades de capacitação específicas de uma empresa patrocinadora. Além do
-						recrutamento, o
-						programa contempla toda a jornada do candidato até a contratação, com foco na formação e
-						mentoria desses profissionais com base nas especificidades de cada empresa.
-					</p>
+								<div class="table-responsive">
+									<table class="table">
+										<thead>
+											<tr class="text-center">
+												<th scope="col"> ID </th>
+												<th scope="col"> Vaga </th>
+												<th scope="col"> Descrição </th>
+												<th scope="col"> Empresa </th>
+												<th scope="col"> Localização </th>
+												<th scope="col"> Data do Cadastro </th>
+												<th scope="col"> Setor </th>
+												<th scope="col"> Ações </th>
+											</tr>
+										</thead>
 
-					<p>
-						Esse tipo de contratação é mais adequado para organizações com grande demanda de vagas.
-						Dessa
-						forma, dezenas de profissionais poderão ser selecionados, treinados e admitidos de uma
-						só vez,
-						garantindo a qualidade do processo e o fit cultural entre contratante e contratados. Por
-						meio
-						desta modalidade, é possível formar tanto competências mais demandadas pelo mercado
-						quanto
-						habilidades mais singulares, para as quais não existe oferta satisfatória de
-						profissionais.
-					</p>
-
-					<p>
-						Um dos diferenciais do programa de residência é que, durante o processo de treinamento,
-						a
-						empresa pode capacitar os participantes não apenas com conhecimentos técnicos, mas
-						também tem a
-						oportunidade de trabalhar os valores e a cultura da organização.
-					</p>
-				</section>
+										<tbody>
+											<tr th:each="vacancy : ${vacancy}">
+												<th scope="row" th:text="${vacancy.id}"></th>
+												<td th:text="${vacancy.name}"></td>
+												<td th:text="${vacancy.description}"></td>
+												<td th:text="${vacancy.enterprise.name}"></td>
+												<td th:text="${vacancy.enterprise.address}"></td>
+												<td th:text="${vacancy.candidacy}"></td>
+												<td th:text="${vacancy.sector}"></td>
+												<td>
+													<button class="btn btn-primary"> Aplicar </button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
 
 				<section class="parcerias">
 					<div>
 						<h2>PACERIAS <span>E PROJETOS</span></h2>
-						<h4>Tem alguma proposta de parceria ou patrocínio? <br>Entre em contato</h4>
+						<h4>Algumas formas de aumentar suas habilidades. <br>Se liga!</h4>
 
 						<div class="flex">
 							<div class="parcerias-box">
 								<i class="bi bi-calendar-week"></i>
-								<h3>Eventos e Patrocícios</h3>
+								<h3>Eventos e Patrocínios</h3>
 
 								<p>
-									Nossos eventos são uma ótima oportunidade para você promover sua marca e
-									alcançar um
-									público qualificado.
+									Nossos eventos são uma ótima oportunidade para você promover sua marca além de
+									aprender e desenvolver-se no mercado.
 								</p>
 							</div>
 
@@ -133,8 +213,8 @@
 								<h3>Podcast</h3>
 
 								<p>
-									Se você é um especialista em tecnologia, ou se simplesmente tem uma história
-									interessante para contar, entre em contato conosco.
+									Desejamos criar uma experiência de aprendizado mais envolvente, acessível e
+									diversificada para voce e seus amigos.
 								</p>
 							</div>
 
@@ -143,9 +223,8 @@
 								<h3>Parcerias Sociais</h3>
 
 								<p>
-									Tem um pedido de apoio ou parceria para a sua Comunidade? Entre em contato
-									conosco e
-									nos envie a sua proposta!
+									Tudo vem do bom compartilhamento e conexão, e aqui não é diferente. Temos muitos
+									parceiros com ótimos benefícios para você!
 								</p>
 							</div>
 						</div>
@@ -155,7 +234,7 @@
 		</div>
 	</main>
 
-	<div th:replace="shared/footer"></div>
+	<div th:replace="shared/_footer"></div>
 
 </body>
 
