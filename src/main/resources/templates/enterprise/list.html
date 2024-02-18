@@ -1,64 +1,70 @@
-<div th:replace="shared/_head"></div>
-<link rel="stylesheet" href="../assets/dist/css/menuAdm.css">
+<div th:replace="@{/shared/_head}"></div>
+<link rel="stylesheet" th:href="@{/assets/dist/css/menuAdm.css}">
 
-<body>
-	<div th:replace="shared/_sidebars"></div>
+<body class="bg-body-tertiary">
+	<div th:replace="@{/shared/_sidebars}"></div>
 
-	<main>
-		<h2> Empresas Cadastradas </h2>
+	<main class="contentor">
+		<div class="container mt-5">
+			<h2 class="display-3 fw-bold" id="typing-header">Lista de Empresas</h2>
 
-		<h2 th:if="${mensagem}" th:text="${mensagem}" style="color: rgb(255, 0, 0);"></h2>
+			<h2 th:if="${mensagem}" th:text="${mensagem}" style="color: rgb(255, 0, 0);"></h2>
 
-		<table class="table">
-			<thead>
-				<tr class="text-center">
-					<th scope="col"> ID </th>
-					<th scope="col"> Nome </th>
-					<th scope="col"> Setor </th>
-					<th scope="col"> CNPJ </th>
-					<th scope="col"> Fundação </th>
-					<th scope="col"> Telefone </th>
-					<th scope="col"> E-mail </th>
-					<th scope="col"> Localização </th>
-					<th scope="col"> Ações </th>
-				</tr>
-			</thead>
+			<div class="table-responsive rounded-3 border">
+				<table class="table table-dark table-striped">
+					<thead>
+						<tr class="text-center">
+							<th scope="col"> ID </th>
+							<th scope="col"> Nome </th>
+							<th scope="col"> Setor </th>
+							<th scope="col"> CNPJ </th>
+							<th scope="col"> Fundação </th>
+							<th scope="col"> Telefone </th>
+							<th scope="col"> E-mail </th>
+							<th scope="col"> Localização </th>
+							<th scope="col"> Ações </th>
+						</tr>
+					</thead>
 
-			<tbody>
-				<tr th:each="enterprise : ${enterprise}">
-					<th scope="row" th:text="${enterprise.id}"></th>
-					<td>
-						<a th:text="${enterprise.name}" th:href="@{/empresa/editar/{id} (id=${enterprise.id})}"></a>
-					</td>
-					<td th:text="${enterprise.sector}"></td>
-					<td
-						th:text="${#strings.replace(#strings.substring(enterprise.cnpj, 0, 2) + '.' + #strings.substring(enterprise.cnpj, 2, 5) + '.' + #strings.substring(enterprise.cnpj, 5, 8) + '/' + #strings.substring(enterprise.cnpj, 8, 12) + '-' + #strings.substring(enterprise.cnpj, 12, 14), '.-', '-')}">
-					</td>
-					<!--<td th:text="${#temporals.format(enterprise.foundation, 'dd/MM/yyyy')}"></td>-->
-					<td th:text="${#dates.format(enterprise.foundation, 'dd/MM/yyyy')}"></td>
+					<tbody>
+						<tr th:each="enterprise : ${enterprise}">
+							<th scope="row" th:text="${enterprise.id}"></th>
+							<td>
+								<a th:text="${enterprise.name}"
+									th:href="@{/empresa/editar/{id} (id=${enterprise.id})}"></a>
+							</td>
+							<td th:text="${enterprise.sector}"></td>
+							<td
+								th:text="${#strings.replace(#strings.substring(enterprise.cnpj, 0, 2) + '.' + #strings.substring(enterprise.cnpj, 2, 5) + '.' + #strings.substring(enterprise.cnpj, 5, 8) + '/' + #strings.substring(enterprise.cnpj, 8, 12) + '-' + #strings.substring(enterprise.cnpj, 12, 14), '.-', '-')}">
+							</td>
+							<!--<td th:text="${#temporals.format(enterprise.foundation, 'dd/MM/yyyy')}"></td>-->
+							<td th:text="${#dates.format(enterprise.foundation, 'dd/MM/yyyy')}"></td>
 
-					<td
-						th:text="${#strings.replace(#strings.substring(enterprise.contact, 0, 2) + ' ' + #strings.substring(enterprise.contact, 2, 6) + '-' + #strings.substring(enterprise.contact, 6, 10), '- ', '-')}">
-					</td>
-					<td th:text="${enterprise.email}"></td>
-					<td th:text="${enterprise.address}"></td>
+							<td
+								th:text="${#strings.replace(#strings.substring(enterprise.contact, 0, 2) + ' ' + #strings.substring(enterprise.contact, 2, 6) + '-' + #strings.substring(enterprise.contact, 6, 10), '- ', '-')}">
+							</td>
+							<td th:text="${enterprise.email}"></td>
+							<td th:text="${enterprise.address}"></td>
 
-					<td>
-						<div class="btn-group">
-							<a th:href="@{/empresa/editar/{id} (id=${enterprise.id})}" class="btn btn-success">
-								Editar
-							</a>
+							<td>
+								<div class="btn-group">
+									<a th:href="@{/empresa/editar/{id} (id=${enterprise.id})}" class="btn btn-success">
+										Editar
+									</a>
 
-							<a th:href="@{/empresa/deletar/{id} (id=${enterprise.id})}" class="btn btn-danger"
-								th:onclick="'return confirm(\'Tem certeza que deseja excluir a empresa com ID: ' + ${enterprise.id} + '?\');'">
-								Excluir
-							</a>
-						</div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<a th:href="@{/empresa/novo}" class="btn btn-primary"> Nova Empresa </a>
+									<a th:href="@{/empresa/deletar/{id} (id=${enterprise.id})}" class="btn btn-danger"
+										th:onclick="'return confirm(\'Tem certeza que deseja excluir a empresa com ID: ' + ${enterprise.id} + '?\');'">
+										Excluir
+									</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<a th:href="@{/empresa/novo}" class="btn btn-primary"> Nova Empresa </a>
+		</div>
 	</main>
 </body>
 

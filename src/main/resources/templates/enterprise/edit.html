@@ -1,80 +1,78 @@
-<div th:replace="shared/_head"></div>
-<link rel="stylesheet" href="../assets/dist/css/menuAdm.css">
+<div th:replace="@{/shared/_head}"></div>
+<link rel="stylesheet" th:href="@{/assets/dist/css/menuAdm.css}">
 
-<body>
-	<div th:replace="shared/_sidebars"></div>
+<body class="bg-body-tertiary">
+	<div th:replace="@{/shared/_sidebars}"></div>
 
 	<main>
-		<div class="form-signin w-100 m-auto">
-			<div class="form-body">
-				<form class="form-row" th:action="@{/empresa/editar/{id} (id=${enterprise.id})}"
-					th:object="${enterprise}" method="post">
+		<div class="container-fluid d-flex align-items-center">
+			<div class="container-xxl d-flex justify-content-center flex-wrap gap-5">
 
-					<h1 class="h3 mb-3 fw-normal" id="typing-header">Editando Empresa</h1>
+				<div class="text-center">
+					<h1 class="display-3 fw-bold" id="typing-header">Editando Empresa</h1>
+				</div>
 
-					<div class="form-group">
-						<label for="id"> ID </label>
-						<input type="text" class="form-control" id="id" name="id" th:field="*{id}"
-							th:readonly="readonly">
-					</div>
+				<form class="col-10" enctype="multipart/form-data" th:object="${enterprise}" method="post">
 
-					<div class="form-group">
-						<label for="name"> Nome da Empresa </label>
-						<input type="text" class="form-control" id="name" placeholder="Digite o nome da empresa"
-							required th:field="*{name}">
-					</div>
+					<div class="row">
+						<div class="col-md-1">
+							<label for="id"> ID </label>
+							<input type="text" class="form-control" id="id" name="id" th:field="*{id}" disabled>
+						</div>
 
-					<div class="form-group">
-						<label for="sector"> Setor de Atividade </label>
-						<input type="text" class="form-control" id="sector" placeholder="Digite o setor de atividade"
-							required th:field="*{sector}">
-					</div>
+						<div class="col-md-11">
+							<label for="name"> Nome da Empresa </label>
+							<input type="text" class="form-control" id="name" placeholder="Digite o nome da empresa"
+								required th:field="*{name}">
+						</div>
 
-					<div class="form-group">
-						<label for="cnpj"> CNPJ (Cadastro Nacional da Pessoa Jurídica) </label>
-						<input type="text" class="form-control" id="cnpj"
-							placeholder="Digite o número de identificação fiscal da empresa" required
-							th:field="*{cnpj}">
-					</div>
+						<div class="col-md-12">
+							<label for="address"> Endereço Comercial </label>
+							<input type="text" class="form-control" id="address"
+								placeholder="Digite o endereço comercial" required th:field="*{address}">
+						</div>
 
-					<div class="form-group">
-						<label for="foundation"> Data de Fundação </label>
-						<input type="date" class="form-control" id="foundation" required th:field="*{foundation}">
-					</div>
+						<div class="col-md-4">
+							<label for="cnpj"> CNPJ </label>
+							<input type="text" class="form-control" id="cnpj"
+								placeholder="Digite o número de identificação fiscal da empresa" required
+								th:field="*{cnpj}">
+						</div>
 
-					<div class="form-group">
-						<label for="contact"> Telefone Comercial </label>
-						<input type="tel" class="form-control" id="contact" placeholder="Digite o número de telefone"
-							required th:field="*{contact}">
-					</div>
+						<div class="col-md-4">
+							<label for="contact"> Telefone </label>
+							<input type="tel" class="form-control" id="contact"
+								placeholder="Digite o número de telefone" required th:field="*{contact}">
+						</div>
 
-					<div class="form-group">
-						<label for="email"> E-mail </label>
-						<input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required
-							th:field="*{email}">
-					</div>
+						<div class="col-md-4">
+							<label for="sector"> Setor de Atividade </label>
+							<input type="text" class="form-control" id="sector"
+								placeholder="Digite o setor de atividade" required th:field="*{sector}">
+						</div>
 
-					<div class="form-group">
-						<label for="address"> Endereço Comercial </label>
-						<input type="text" class="form-control" id="address" placeholder="Digite o endereço comercial"
-							required th:field="*{address}">
-					</div>
+						<div class="col-md-8">
+							<label for="email"> E-mail </label>
+							<input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required
+								th:field="*{email}">
+						</div>
 
-					<div class="col-12 col-lg-auto d-grid gap-2 d-md-flex">
-						<button class="btn btn-primary py-2" type="submit"> Salvar </button>
+						<div class="col-md-4">
+							<label for="foundation"> Data de Fundação </label>
+							<input type="date" class="form-control" id="foundation" required th:field="*{foundation}">
+						</div>
 
-						<a th:href="@{/empresa/deletar/{id} (id=${enterprise.id})}" class="btn btn-danger"
-							th:onclick="'return confirm(\'Tem certeza que deseja excluir essa empresa?\');'">
-							
-							Excluir
-						</a>
-					</div>
+						<div class="col d-flex justify-content-center flex-wrap gap-2 my-4">
+							<button class="btn btn-primary col-4" type="submit">Salvar</button>
 
-					<p class="mt-5 mb-3 text-body-secondary"> © 2023 - devHOME™ </p>
+							<a th:href="@{/empresa/deletar/{id} (id=${enterprise.id})}" class="btn btn-danger col-4"
+								th:onclick="'return confirm(\'Tem certeza que deseja excluir essa empresa?\');'">
+
+								Excluir
+							</a>
+						</div>
 				</form>
 			</div>
-		</div>
-		</div>
 		</div>
 	</main>
 </body>

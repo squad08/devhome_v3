@@ -1,59 +1,61 @@
-<div th:replace="shared/_head"></div>
-<link rel="stylesheet" href="../assets/dist/css/menuAdm.css">
+<div th:replace="@{/shared/_head}"></div>
+<link rel="stylesheet" th:href="@{/assets/dist/css/menuAdm.css}">
 
-<body>
-	<div th:replace="shared/_sidebars"></div>
+<body class="bg-body-tertiary">
+	<div th:replace="@{/shared/_sidebars}"></div>
 
-	<main>
-		<h2> Vagas Cadastradas </h2>
+	<main class="contentor">
+		<div class="container mt-5">
+			<h2 class="display-3 fw-bold" id="typing-header">Lista de Vagas</h2>
 
-		<table class="table">
-			<thead>
-				<tr class="text-center">
-					<th scope="col"> ID </th>
-					<th scope="col"> Nome </th>
-					<th scope="col"> Descrição </th>
-					<th scope="col"> Empresa </th>
-					<th scope="col"> Localização </th>
-					<th scope="col"> Data do Cadastro </th>
-					<th scope="col"> Área </th>
-					<th scope="col"> Ações </th>
-				</tr>
-			</thead>
+			<div class="table-responsive rounded-3 border">
+				<table class="table table-dark table-striped">
+					<thead>
+						<tr class="text-center">
+							<th scope="col"> ID </th>
+							<th scope="col"> Nome </th>
+							<th scope="col"> Descrição </th>
+							<th scope="col"> Empresa </th>
+							<th scope="col"> Localização </th>
+							<th scope="col"> Data do Cadastro </th>
+							<th scope="col"> Área </th>
+							<th scope="col"> Ações </th>
+						</tr>
+					</thead>
 
-			<tbody>
-				<tr th:each="vacancy : ${vacancy}">
-					<th scope="row" th:text="${vacancy.id}"></th>
-					<td>
-						<a th:text="${vacancy.name}" th:href="@{/vaga/editar/{id} (id=${vacancy.id})}"></a>
-					</td>
-					<td th:text="${vacancy.description}"></td>
-					<td th:text="${vacancy.enterprise.name}"></td>
-					<td th:text="${vacancy.enterprise.address}"></td>
-					<td th:text="${vacancy.sector}"></td>
-					<td th:text="${vacancy.candidacy}"></td>
+					<tbody>
+						<tr th:each="vacancy : ${vacancy}">
+							<th scope="row" th:text="${vacancy.id}"></th>
+							<td>
+								<a th:text="${vacancy.name}" th:href="@{/vaga/editar/{id} (id=${vacancy.id})}"></a>
+							</td>
+							<td th:text="${vacancy.description}"></td>
+							<td th:text="${vacancy.enterprise.name}"></td>
+							<td th:text="${vacancy.enterprise.address}"></td>
+							<td th:text="${vacancy.sector}"></td>
+							<td th:text="${vacancy.candidacy}"></td>
 
-					<td>
-						<div class="btn-group">
-							<a th:href="@{/vaga/editar/{id} (id=${vacancy.id})}" class="btn btn-success">
-								Editar
-							</a>
+							<td>
+								<div class="btn-group">
+									<a th:href="@{/vaga/editar/{id} (id=${vacancy.id})}" class="btn btn-success">
+										Editar
+									</a>
 
-							<a th:href="@{/vaga/deletar/{id} (id=${vacancy.id})}" class="btn btn-danger"
-								th:onclick="'return confirm(\'Tem certeza que deseja excluir a vaga com ID: ' + ${vacancy.id} + '?\');'">
-								Excluir
-							</a>
-						</div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<a th:href="@{/vaga/novo}" class="btn btn-primary"> Nova Vaga </a>
+									<a th:href="@{/vaga/deletar/{id} (id=${vacancy.id})}" class="btn btn-danger"
+										th:onclick="'return confirm(\'Tem certeza que deseja excluir a vaga com ID: ' + ${vacancy.id} + '?\');'">
+										Excluir
+									</a>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 
-		</section>
-		</div>
+			<a th:href="@{/vaga/novo}" class="btn btn-primary"> Nova Vaga </a>
 		</div>
 	</main>
+
 </body>
 
 </html>

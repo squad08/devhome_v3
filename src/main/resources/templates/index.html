@@ -1,8 +1,8 @@
-<div th:replace="shared/_head"></div>
-<link rel="stylesheet" href="../assets/dist/css/index.css">
+<div th:replace="@{/shared/_head}"></div>
+<link rel="stylesheet" th:href="@{/assets/dist/css/index.css}">
 
 <body>
-	<div th:replace="shared/_navbar"></div>
+	<div th:replace="@{/shared/_navbar}"></div>
 
 	<main>
 		<div class="carousel slide" id="devHOME™" data-bs-ride="carousel">
@@ -133,7 +133,7 @@
 				</div>
 
 				<div class="col-lg-6">
-					<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+					<h1 class="display-5 fw-bold lh-1 mb-3">
 						Antes na medicina agora <span class="enfase-text" id="typing-header"> em Software</span>
 					</h1>
 
@@ -163,7 +163,7 @@
 				</div>
 
 				<div class="col-lg-6">
-					<h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+					<h1 class="display-5 fw-bold lh-1 mb-3">
 						Objetivo principal do <span class="enfase-text">Programa</span>!
 					</h1>
 
@@ -210,7 +210,7 @@
 					</div>
 
 					<div>
-						<h3 class="fs-2 text-body-emphasis"> Aprendizado </h3>
+						<h3 class="fs-2"> Aprendizado </h3>
 						<p class="opacity-75">
 							Os participantes são imersos em projetos práticos de desenvolvimento de software do
 							mundo
@@ -235,7 +235,7 @@
 
 					<div>
 						<div>
-							<h3 class="fs-2 text-body-emphasis"> Feedback </h3>
+							<h3 class="fs-2"> Feedback </h3>
 							<p class="opacity-75">
 								O feedback contínuo na residência em software é um ciclo de aprendizado crucial. Ele
 								realça pontos fortes e áreas a melhorar, molda o desenvolvimento individual,
@@ -261,7 +261,7 @@
 					</div>
 
 					<div>
-						<h3 class="fs-2 text-body-emphasis"> Networking </h3>
+						<h3 class="fs-2"> Networking </h3>
 						<p class="opacity-75">
 							Além das habilidades técnicas, também oferecemos aos residentes a chance de conhecer
 							colegas, mentores, líderes de empresas e outros profissionais da área, que torna
@@ -278,7 +278,7 @@
 		</div>
 	</main>
 
-	<div th:replace="shared/_footer"></div>
+	<div th:replace="@{/shared/_footer}"></div>
 
 </body>
 

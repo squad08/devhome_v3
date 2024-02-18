@@ -1,58 +1,63 @@
-<div th:replace="shared/_head"></div>
-<link rel="stylesheet" href="../assets/dist/css/menuAdm.css">
+<div th:replace="@{/shared/_head}"></div>
+<link rel="stylesheet" th:href="@{/assets/dist/css/menuAdm.css}">
 
-<body>
-	<div th:replace="shared/_sidebars"></div>
+<body class="bg-body-tertiary">
+	<div th:replace="@{/shared/_sidebars}"></div>
 
 	<main>
 		<div class="container-fluid d-flex align-items-center">
 			<div class="container-xxl d-flex justify-content-center flex-wrap gap-5">
 
 				<div class="text-center">
-					<h3 class="fw-normal" id="typing-header">Editando Usuário</h3>
+					<h1 class="display-3 fw-bold" id="typing-header">Editando Usuário</h1>
 				</div>
 
-				<form class="col-10" enctype="multipart/form-data" th:object="${user}" method="POST">
+				<form class="col-10" enctype="multipart/form-data" th:object="${user}" method="post">
 
-					<div class="row row-cols-1 row-cols-md-1 row-gap-1">
-						<div class="col">
-							<label for="name" class="form-label">Nome Completo</label>
-							<input type="text" class="form-control" id="name" placeholder="Digite seu nome" required
+					<div class="row">
+						<div class="col-md-1">
+							<label for="id"> ID </label>
+							<input type="text" class="form-control" id="id" name="id" th:field="*{id}" disabled>
+						</div>
+
+						<div class="col-md-11">
+							<label for="name">Nome Completo</label>
+							<input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome" required
 								th:field="*{name}">
 						</div>
 
 						<div class="col-md-4">
-							<label for="birth" class="form-label">Data de Nascimento</label>
+							<label for="birth">Data de Nascimento</label>
 							<input type="date" class="form-control" id="birth" placeholder="Digite a data de nascimento"
 								required th:field="*{birth}">
 						</div>
 
 						<div class="col-md-4">
-							<label for="cpf" class="form-label">CPF</label>
+							<label for="cpf">CPF</label>
 							<input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF" required
 								th:field="*{cpf}">
 						</div>
 
 						<div class="col-md-4">
-							<label for="contact" class="form-label">Telefone</label>
+							<label for="contact">Telefone</label>
 							<input type="text" class="form-control" id="contact" placeholder="Número de contato"
 								required th:field="*{contact}">
 						</div>
 
 						<div class="col-md-6">
-							<label for="email" class="form-label">E-mail</label>
+							<label for="email">E-mail</label>
 							<input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required
 								th:field="*{email}">
 						</div>
 
 						<div class="col-md-3">
-							<label for="password" class="form-label">Senha</label>
+							<label for="password">Senha</label>
 							<input type="password" class="form-control" id="password" placeholder="Alterar senha"
 								required th:field="*{password}">
 						</div>
 
 						<div class="col-md-3">
-							<label for="img" class="form-label">Foto</label>
+							<label for="img">Foto</label>
 							<input type="file" class="form-control" id="img" name="img">
 						</div>
 
@@ -68,8 +73,8 @@
 				</form>
 			</div>
 		</div>
-		</div>
 	</main>
+
 </body>
 
 </html>

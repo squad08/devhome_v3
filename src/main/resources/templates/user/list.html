@@ -1,26 +1,26 @@
-<div th:replace="shared/_head"></div>
-<link rel="stylesheet" href="../assets/dist/css/menuAdm.css">
+<div th:replace="@{/shared/_head}"></div>
+<link rel="stylesheet" th:href="@{/assets/dist/css/menuAdm.css}">
 
-<body>
-	<div th:replace="shared/_sidebars"></div>
+<body class="bg-body-tertiary">
+	<div th:replace="@{/shared/_sidebars}"></div>
 
-	<main>
+	<main class="contentor">
 		<div class="container mt-5">
-			<h2>Lista de Usuários</h2>
+			<h2 class="display-3 fw-bold" id="typing-header">Lista de Usuários</h2>
 
-			<div class="table-responsive">
+			<div class="table-responsive rounded-3 border">
 				<table class="table table-dark table-striped">
 					<thead>
-						<tr>
+						<tr class="text-center">
 							<th scope="col">ID</th>
-							<th scope="col">FOTO</th>
-							<th scope="col">NOME</th>
-							<th scope="col">ANIVERSÁRIO</th>
+							<th scope="col">Foto</th>
+							<th scope="col">Nome</th>
+							<th scope="col">Aniversário</th>
 							<th scope="col">CPF</th>
-							<th scope="col">CONTATO</th>
-							<th scope="col">EMAIL</th>
-							<th scope="col">SENHA</th>
-							<th scope="col" class="text-center"> AÇÕES </th>
+							<th scope="col">Contato</th>
+							<th scope="col">Email</th>
+							<th scope="col">Senha</th>
+							<th scope="col"> Ações </th>
 						</tr>
 					</thead>
 
@@ -58,10 +58,11 @@
 					</tbody>
 				</table>
 			</div>
+
 			<a th:href="@{/usuario/novo}" class="btn btn-primary"> Novo Usuário </a>
 		</div>
-		</div>
 	</main>
+
 </body>
 
 </html>

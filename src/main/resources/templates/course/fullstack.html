@@ -1,5 +1,5 @@
-<div th:replace="shared/_head"></div>
-<link rel="stylesheet" href="../assets/dist/css/menuUser.css">
+<div th:replace="@{/shared/_head}"></div>
+<link rel="stylesheet" th:href="@{/assets/dist/css/menuUser.css}">
 
 <body>
 	<main>
@@ -19,7 +19,9 @@
 							<a th:href="@{/trilhas}" class="nav-link" aria-current="page">
 								<lord-icon src="https://cdn.lordicon.com/whtfgdfm.json" trigger="hover"
 									colors="primary:#ff0066" style="width:30px;height:30px">
-								</lord-icon> Sair
+								</lord-icon> 
+								
+								Sair
 							</a>
 						</li>
 					</ul>
@@ -27,6 +29,7 @@
 
 				<div class="content">
 					<h1 id="tituloModulo">Bem-vindo ao Mundo do Desenvolvimento Full-Stack!</h1>
+					
 					<p id="conteudoModulo">Estamos empolgados por você se juntar a nós nesta jornada pelo fascinante
 						universo do desenvolvimento Front-end e back-end. Ao longo deste curso, exploraremos os
 						fundamentos,
@@ -34,7 +37,7 @@
 						funcionalidades e interações complexas que os usuários adoram.
 					</p>
 
-					<div class="imagem"><img src="/assets/img/other/front-back.png" alt=""></div>
+					<div class="imagem"><img th:src="@{/assets/img/other/front-back.png}" alt=""></div>
 				</div>
 			</div>
 		</div>

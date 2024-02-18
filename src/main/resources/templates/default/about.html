@@ -1,26 +1,26 @@
-<div th:replace="shared/_head"></div>
-<link rel="stylesheet" href="../assets/dist/css/about.css">
+<div th:replace="@{/shared/_head}"></div>
+<link rel="stylesheet" th:href="@{/assets/dist/css/about.css}">
 
 <body>
-	<div th:replace="shared/_navbar"></div>
+	<div th:replace="@{/shared/_navbar}"></div>
 
 	<main>
 		<div class="container-fluid d-flex align-items-center my-5">
 			<div class="container-xxl d-flex justify-content-center flex-wrap gap-5">
 
-				<div class="container  text-center my-5">
+				<section class="container my-3 text-center">
 					<div class="col text-center">
-						<h1 class="fw-bold">Ligamos o liguidificador.. <span class="enfase-text">ARGH</span></h1>
+						<h1 class="fw-bold">Ligamos o liquidificador.. <span class="enfase-text">ARGH</span></h1>
 
 						<p class="lead fs-4">
 							"Seja bem-vindo à nossa casa de software, onde misturamos talento e inovação, como
 							ingredientes em um liquidificador, para criar soluções únicas e eficientes..."
 						</p>
 					</div>
-					<img class="img-fluid my-3" alt="Imagem" src="../assets/img/other/mixer.svg">
-				</div>
+					<img class="img-fluid my-3" alt="Imagem" th:src="@{/assets/img/other/mixer.svg}">
+				</section>
 
-				<section class="container my-5">					
+				<section class="container my-3">
 					<div class="container ">
 						<div class="row justify-content-center align-items-center my-5">
 							<div class="col-lg-3">
@@ -32,7 +32,7 @@
 
 							<div class="col-8">
 								<h1 class="">
-									 Missão
+									Missão
 								</h1>
 
 								<p class="lead">
@@ -56,7 +56,7 @@
 
 							<div class="col-8">
 								<h1 class="">
-									 Visão
+									Visão
 								</h1>
 
 								<p class="lead">
@@ -98,48 +98,44 @@
 					</div>
 				</section>
 
-				<section class="container my-5">
+				<section class="container my-3">
 					<div class="my-5">
-						<h2 class="fw-bold">"Equipe instanciada!"</h2>
+						<h2 class="text-center">"Equipe instanciada!"</h2>
 
-						<div class="row row-cols-8">
+						<div class="row">
 							<div id="card-area">
 								<div class="box-area">
 									<div class="col col-md-12 box">
-										<img alt="" src="../assets/img/other/leo.png">
+										<img alt="" th:src="@{/assets/img/other/leomar.png}">
 
 										<div class="overlay">
-											<h3> Missão </h3>
+											<h3> Leomar Fernandes </h3>
 
 											<p>
-												Capacitar profissionais de tecnologia para enfrentar desafios reais
-												e
-												encontrar vagas rapidamente.
+												
 											</p>
 										</div>
 									</div>
 
 									<div class="col col-md-12 box">
-										<img alt="" src="../assets/img/other/levi.png">
+										<img alt="" th:src="@{/assets/img/other/levi.png}">
 
 										<div class="overlay">
-											<h3> Visão </h3>
+											<h3> Levi Figueiredo </h3>
 											<p>
-												Ser referência na transformação da capacitação de profissionais de
-												tecnologia.
+												"Esqueça o passado, viva o presente e planeje o futuro"
 											</p>
 										</div>
 									</div>
 
 									<div class="col col-md-12 box">
-										<img alt="" src="../assets/img/other/lucas.png">
+										<img alt="" th:src="@{/assets/img/other/lucas.png}">
 
 										<div class="overlay">
-											<h3> Valores </h3>
+											<h3> Lucas Santos </h3>
 											<p>
-												Excelência, Colaboração, Inovação, Empoderamento, Integridade,
-												Satisfação e
-												Conhecimento.
+												"Desafios não existem para nos deter, mas sim para nos impulsionar a
+												alcançar novos horizontes."
 											</p>
 										</div>
 									</div>
@@ -149,92 +145,87 @@
 					</div>
 				</section>
 
-				<div class="row row-10 align-items-center rounded-3 border text-center my-5">
-					<div class="col">
+				<section class="container my-3 border rounded-3">
+					<h3 class="text-center fw-bold my-4"> Vagas esperando por você </h3>
 
-						<section class="container text-center my-5">
-							<div class="row">
-								<h2>Empresas esperando por você!</h2>
+					<div class="container text-center table-responsive my-lg-3">
+						<table class="table">
+							<thead>
+								<tr class="text-center">
+									<th scope="col"> ID </th>
+									<th scope="col"> Vaga </th>
+									<th scope="col"> Descrição </th>
+									<th scope="col"> Empresa </th>
+									<th scope="col"> Localização </th>
+									<th scope="col"> Data do Cadastro </th>
+									<th scope="col"> Setor </th>
+									<th scope="col"> Ações </th>
+								</tr>
+							</thead>
 
-								<div class="table-responsive">
-									<table class="table">
-										<thead>
-											<tr class="text-center">
-												<th scope="col"> ID </th>
-												<th scope="col"> Vaga </th>
-												<th scope="col"> Descrição </th>
-												<th scope="col"> Empresa </th>
-												<th scope="col"> Localização </th>
-												<th scope="col"> Data do Cadastro </th>
-												<th scope="col"> Setor </th>
-												<th scope="col"> Ações </th>
-											</tr>
-										</thead>
-
-										<tbody>
-											<tr th:each="vacancy : ${vacancy}">
-												<th scope="row" th:text="${vacancy.id}"></th>
-												<td th:text="${vacancy.name}"></td>
-												<td th:text="${vacancy.description}"></td>
-												<td th:text="${vacancy.enterprise.name}"></td>
-												<td th:text="${vacancy.enterprise.address}"></td>
-												<td th:text="${vacancy.candidacy}"></td>
-												<td th:text="${vacancy.sector}"></td>
-												<td>
-													<button class="btn btn-primary"> Aplicar </button>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</section>
-					</div>
-				</div>
-
-				<section class="parcerias">
-					<div>
-						<h2>PACERIAS <span>E PROJETOS</span></h2>
-						<h4>Algumas formas de aumentar suas habilidades. <br>Se liga!</h4>
-
-						<div class="flex">
-							<div class="parcerias-box">
-								<i class="bi bi-calendar-week"></i>
-								<h3>Eventos e Patrocínios</h3>
-
-								<p>
-									Nossos eventos são uma ótima oportunidade para você promover sua marca além de
-									aprender e desenvolver-se no mercado.
-								</p>
-							</div>
-
-							<div class="parcerias-box">
-								<i class="bi bi-mic"></i>
-								<h3>Podcast</h3>
-
-								<p>
-									Desejamos criar uma experiência de aprendizado mais envolvente, acessível e
-									diversificada para voce e seus amigos.
-								</p>
-							</div>
-
-							<div class="parcerias-box">
-								<i class="bi bi-people"></i>
-								<h3>Parcerias Sociais</h3>
-
-								<p>
-									Tudo vem do bom compartilhamento e conexão, e aqui não é diferente. Temos muitos
-									parceiros com ótimos benefícios para você!
-								</p>
-							</div>
-						</div>
+							<tbody>
+								<tr th:each="vacancy : ${vacancy}">
+									<th scope="row" th:text="${vacancy.id}"></th>
+									<td th:text="${vacancy.name}"></td>
+									<td th:text="${vacancy.description}"></td>
+									<td th:text="${vacancy.enterprise.name}"></td>
+									<td th:text="${vacancy.enterprise.address}"></td>
+									<td th:text="${vacancy.candidacy}"></td>
+									<td th:text="${vacancy.sector}"></td>
+									<td>
+										<button class="btn btn-primary"> Aplicar </button>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</section>
 			</div>
 		</div>
+
+		<section class="parcerias">
+			<div>
+				<h2 class="text-center fw-bold">PACERIAS <span>E PROJETOS</span></h2>
+				<h4>Algumas formas de aumentar suas habilidades. <br>Se liga!</h4>
+
+				<div class="flex">
+					<div class="parcerias-box">
+						<i class="bi bi-calendar-week"></i>
+						<h3>Eventos e Patrocínios</h3>
+
+						<p>
+							Nossos eventos são uma ótima oportunidade para você promover sua marca além de
+							aprender e desenvolver-se no mercado.
+						</p>
+					</div>
+
+					<div class="parcerias-box">
+						<i class="bi bi-mic"></i>
+						<h3>Podcast</h3>
+
+						<p>
+							Desejamos criar uma experiência de aprendizado mais envolvente, acessível e
+							diversificada para voce e seus amigos.
+						</p>
+					</div>
+
+					<div class="parcerias-box">
+						<i class="bi bi-people"></i>
+						<h3>Parcerias Sociais</h3>
+
+						<p>
+							Tudo vem do bom compartilhamento e conexão, e aqui não é diferente. Temos muitos
+							parceiros com ótimos benefícios para você!
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		</div>
+		</div>
 	</main>
 
-	<div th:replace="shared/_footer"></div>
+	<div th:replace="@{/shared/_footer}"></div>
 
 </body>
 

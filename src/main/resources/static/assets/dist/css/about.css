@@ -30,6 +30,7 @@ Cards second-section .wrapper {
 
 .box img {
 	width: 100%;
+	height: auto;
 	border-radius: 10px;
 	display: block;
 	transition: transform 0.5s;
@@ -81,13 +82,6 @@ Cards second-section .wrapper {
 
 .parcerias {
 	padding: 40px 4%;
-	background-color: var(--bg-dark);
-}
-
-h2 {
-	color: var(--text-light);
-	font-size: 38px;
-	text-align: center;
 }
 
 h2 span {

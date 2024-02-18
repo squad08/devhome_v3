@@ -20,7 +20,7 @@
 	--color-pink: #2BDEFD;
 	--color-special: hsl(336, 100%, 50%);
 	--translucid-special: hsla(336, 100%, 50%, .2);
-	--bs-secondary-color: hsla(336, 100%, 50%, .8);
+	/*	--bs-secondary-color: hsla(336, 100%, 50%, .8);*/
 
 	--text-other: var(--color-other);
 	--text-light: var(--color-light);
@@ -58,6 +58,20 @@
 			var(--bg-special),
 			var(--bg-light));
 }
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--translucid-special);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: var(--color-special);
+	border-radius: 5px;
+}
+
 
 *,
 ::after,
@@ -129,7 +143,6 @@ body {
 }
 
 a:link {
-	color: var(--text-light);
 	text-decoration: none;
 }
 

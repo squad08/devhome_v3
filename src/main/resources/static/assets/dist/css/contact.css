@@ -62,7 +62,6 @@
 
 .contato-heading h1 {
 	font-weight: 600;
-	color: var(--text-light);
 	font-size: 3.5rem;
 	line-height: 0.9;
 	white-space: nowrap;
@@ -74,7 +73,6 @@
 }
 
 .texto {
-	color: var(--text-light);
 	line-height: 1.1;
 	font-size: 1rem;
 }
@@ -134,7 +132,6 @@
 	top: 50%;
 	left: calc(1.35rem + 2px);
 	transform: translateY(-50%);
-	color: var(--text-light);
 	pointer-events: none;
 	transition: 0.25s;
 }
@@ -168,7 +165,6 @@ textarea.contato-input~.icon {
 
 .input-wrap .focus .contato-input {
 	background-color: var(--bg-color);
-	border: 2px solid var(--text-light);
 	box-shadow: 0 0 0 5px hsla(var(--main-hue), 91%, 55%, 0.11);
 }
 

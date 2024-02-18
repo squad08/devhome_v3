@@ -1,8 +1,8 @@
-<div th:replace="shared/_head"></div>
-<link rel="stylesheet" href="../assets/dist/css/menuAdm.css">
+<div th:replace="@{/shared/_head}"></div>
+<link rel="stylesheet" th:href="@{/assets/dist/css/menuAdm.css}">
 
-<body>
-	<div th:replace="shared/_sidebars"></div>
+<body class="bg-body-tertiary">
+	<div th:replace="@{/shared/_sidebars}"></div>
 
 	<main>
 		<div class="form-signin w-100 m-auto">
@@ -70,9 +70,8 @@
 				</form>
 			</div>
 		</div>
-		</div>
-		</div>
 	</main>
+	
 </body>
 
 </html>

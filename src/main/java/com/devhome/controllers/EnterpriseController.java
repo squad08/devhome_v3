@@ -28,7 +28,7 @@ public class EnterpriseController {
 	public String list(Model model) {
 		List<Enterprise> enterprise = enterpriseService.getAllEnterprise();
 		model.addAttribute("enterprise", enterprise);
-		model.addAttribute("title", " Lista de empresas ");
+		model.addAttribute("title", " Lista de empresas ・ devHOME™ ");
 		return "enterprise/list";
 	}
 
@@ -36,7 +36,7 @@ public class EnterpriseController {
 	public String showFormForAdd(Model model) {
 		Enterprise enterprise = new Enterprise();
 		model.addAttribute("enterprise", enterprise);
-		model.addAttribute("title", " Cadastro de empresa ");
+		model.addAttribute("title", " Cadastro de empresa ・ devHOME™ ");
 		return "enterprise/cadastre";
 	}
 
@@ -50,7 +50,7 @@ public class EnterpriseController {
 	public String showFormForUpdate(@PathVariable Long id, Model model) {
 		Enterprise enterprise = enterpriseService.getById(id);
 		model.addAttribute("enterprise", enterprise);
-		model.addAttribute("title", " Editar empresa ");
+		model.addAttribute("title", " Editar empresa ・ devHOME™ ");
 		return "enterprise/edit";
 	}
 

@@ -33,7 +33,7 @@ public class UserController {
 	public String list(Model model) {
 		List<User> user = userService.getAllUser();
 		model.addAttribute("user", user);
-		model.addAttribute("title", " Lista de usuários ");
+		model.addAttribute("title", " Lista de usuários ・ devHOME™ ");
 		return "user/list";
 	}
 
@@ -41,7 +41,7 @@ public class UserController {
 	public String showFormForAdd(Model model) {
 		User user = new User();
 		model.addAttribute("user", user);
-		model.addAttribute("title", " Cadastro de usuário ");
+		model.addAttribute("title", " Cadastro de usuário ・ devHOME™ ");
 		return "user/cadastre"; // REDIRECIONAR PARA A PAGINA DE PERFIL OU MENU DO USUÁRIO
 	}
 
@@ -55,7 +55,7 @@ public class UserController {
 	public String showFormForUpdate(@PathVariable Long id, Model model) {
 		User user = userService.getById(id);
 		model.addAttribute("user", user);
-		model.addAttribute("title", " Editar usuário ");
+		model.addAttribute("title", " Editar usuário ・ devHOME™ ");
 		return "user/edit";
 	}
 

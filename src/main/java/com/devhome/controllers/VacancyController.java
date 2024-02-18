@@ -32,7 +32,7 @@ public class VacancyController {
 	public String list(Model model) {
 		List<Vacancy> vacancy = vacancyService.getAllVaga();
 		model.addAttribute("vacancy", vacancy);
-		model.addAttribute("title", " Lista de vagas ");
+		model.addAttribute("title", " Lista de vagas ・ devHOME™ ");
 		return "vacancy/list";
 	}
 
@@ -42,7 +42,7 @@ public class VacancyController {
 		List<Enterprise> enterprise = enterpriseService.getAllEnterprise();
 		model.addAttribute("vacancy", vacancy);
 		model.addAttribute("enterprise", enterprise);
-		model.addAttribute("title", " Cadastro de vaga ");
+		model.addAttribute("title", " Cadastro de vaga ・ devHOME™ ");
 		return "vacancy/cadastre";
 	}
 
@@ -58,7 +58,7 @@ public class VacancyController {
 		List<Enterprise> enterprise = enterpriseService.getAllEnterprise();
 		model.addAttribute("vacancy", vacancy);
 		model.addAttribute("enterprise", enterprise);
-		model.addAttribute("title", " Editar vaga ");
+		model.addAttribute("title", " Editar vaga ・ devHOME™ ");
 		return "vacancy/edit";
 	}
 
@@ -78,7 +78,7 @@ public class VacancyController {
 	public String others(Model model) {
 		List<Vacancy> vacancy = vacancyService.getAllVaga();
 		model.addAttribute("vacancy", vacancy);
-		model.addAttribute("title", " Vagas ");
+		model.addAttribute("title", " Vagas ・ devHOME™ ");
 		return "vacancy/opportunity";
 	}
 }
