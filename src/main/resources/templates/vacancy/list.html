@@ -9,15 +9,16 @@
 			<h2 class="display-3 fw-bold" id="typing-header">Lista de Vagas</h2>
 
 			<div class="table-responsive rounded-3 border">
-				<table class="table table-dark table-striped">
+				<table class="table table-striped table-hover caption-bottom">
+					<caption class="text-center">Essas foram todas as vagas cadastradas até o momento.</caption>
 					<thead>
-						<tr class="text-center">
+						<tr>
 							<th scope="col"> ID </th>
 							<th scope="col"> Nome </th>
 							<th scope="col"> Descrição </th>
 							<th scope="col"> Empresa </th>
 							<th scope="col"> Localização </th>
-							<th scope="col"> Data do Cadastro </th>
+							<th scope="col"> Cadastrada </th>
 							<th scope="col"> Área </th>
 							<th scope="col"> Ações </th>
 						</tr>
@@ -32,8 +33,8 @@
 							<td th:text="${vacancy.description}"></td>
 							<td th:text="${vacancy.enterprise.name}"></td>
 							<td th:text="${vacancy.enterprise.address}"></td>
-							<td th:text="${vacancy.sector}"></td>
 							<td th:text="${vacancy.candidacy}"></td>
+							<td th:text="${vacancy.sector}"></td>
 
 							<td>
 								<div class="btn-group">
@@ -52,7 +53,7 @@
 				</table>
 			</div>
 
-			<a th:href="@{/vaga/novo}" class="btn btn-primary"> Nova Vaga </a>
+			<a th:href="@{/vaga/novo}" class="btn btn-primary my-3"> Nova Vaga </a>
 		</div>
 	</main>
 

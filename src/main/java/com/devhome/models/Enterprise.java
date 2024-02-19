@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,9 +33,9 @@ public class Enterprise {
 	private String sector;
 
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
+    @DateTimeFormat(iso = ISO.DATE)
 	private Date foundation;
-
+	
 	@Column(nullable = false)
 	private String contact;
 

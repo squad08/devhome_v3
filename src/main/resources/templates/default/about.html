@@ -8,7 +8,7 @@
 		<div class="container-fluid d-flex align-items-center my-5">
 			<div class="container-xxl d-flex justify-content-center flex-wrap gap-5">
 
-				<section class="container my-3 text-center">
+				<section class="container my-5 text-center">
 					<div class="col text-center">
 						<h1 class="fw-bold">Ligamos o liquidificador.. <span class="enfase-text">ARGH</span></h1>
 
@@ -149,7 +149,7 @@
 					<h3 class="text-center fw-bold my-4"> Vagas esperando por você </h3>
 
 					<div class="container text-center table-responsive my-lg-3">
-						<table class="table">
+						<table class="table table-striped">
 							<thead>
 								<tr class="text-center">
 									<th scope="col"> ID </th>
@@ -159,7 +159,6 @@
 									<th scope="col"> Localização </th>
 									<th scope="col"> Data do Cadastro </th>
 									<th scope="col"> Setor </th>
-									<th scope="col"> Ações </th>
 								</tr>
 							</thead>
 
@@ -172,9 +171,6 @@
 									<td th:text="${vacancy.enterprise.address}"></td>
 									<td th:text="${vacancy.candidacy}"></td>
 									<td th:text="${vacancy.sector}"></td>
-									<td>
-										<button class="btn btn-primary"> Aplicar </button>
-									</td>
 								</tr>
 							</tbody>
 						</table>

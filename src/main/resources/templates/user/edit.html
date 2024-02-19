@@ -12,67 +12,75 @@
 					<h1 class="display-3 fw-bold" id="typing-header">Editando Usuário</h1>
 				</div>
 
-				<form class="col-10" enctype="multipart/form-data" th:object="${user}" method="post">
+				<div class="container">
+					<div class="row align-items-center">
 
-					<div class="row">
-						<div class="col-md-1">
-							<label for="id"> ID </label>
-							<input type="text" class="form-control" id="id" name="id" th:field="*{id}" disabled>
+						<div class="col-2 rounded img-thumbnail">
+							<img alt="imagem" height="250px" width="150px" th:src="@{'/usuario/img/' + ${user.id}}" />
 						</div>
 
-						<div class="col-md-11">
-							<label for="name">Nome Completo</label>
-							<input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome" required
-								th:field="*{name}">
-						</div>
+						<form class="col-10" enctype="multipart/form-data" th:object="${user}" method="post">
 
-						<div class="col-md-4">
-							<label for="birth">Data de Nascimento</label>
-							<input type="date" class="form-control" id="birth" placeholder="Digite a data de nascimento"
-								required th:field="*{birth}">
-						</div>
+							<div class="row">
+								<div class="col-md-1">
+									<label for="id"> ID </label>
+									<input type="text" class="form-control text-center" id="id" name="id"
+										th:field="*{id}" disabled>
+								</div>
 
-						<div class="col-md-4">
-							<label for="cpf">CPF</label>
-							<input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF" required
-								th:field="*{cpf}">
-						</div>
+								<div class="col-md-11">
+									<label for="name">Nome Completo</label>
+									<input type="text" class="form-control" id="name" name="name"
+										placeholder="Digite seu nome" required th:field="*{name}">
+								</div>
 
-						<div class="col-md-4">
-							<label for="contact">Telefone</label>
-							<input type="text" class="form-control" id="contact" placeholder="Número de contato"
-								required th:field="*{contact}">
-						</div>
+								<div class="col-md-4">
+									<label for="birth">Data de Nascimento</label>
+									<input type="date" class="form-control" id="birth"
+										placeholder="Digite a data de nascimento" required th:field="*{birth}">
+								</div>
 
-						<div class="col-md-6">
-							<label for="email">E-mail</label>
-							<input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" required
-								th:field="*{email}">
-						</div>
+								<div class="col-md-4">
+									<label for="cpf">CPF</label>
+									<input type="text" class="form-control" id="cpf" placeholder="Digite seu CPF"
+										required th:field="*{cpf}">
+								</div>
 
-						<div class="col-md-3">
-							<label for="password">Senha</label>
-							<input type="password" class="form-control" id="password" placeholder="Alterar senha"
-								required th:field="*{password}">
-						</div>
+								<div class="col-md-4">
+									<label for="contact">Telefone</label>
+									<input type="text" class="form-control" id="contact" placeholder="Número de contato"
+										required th:field="*{contact}">
+								</div>
 
-						<div class="col-md-3">
-							<label for="img">Foto</label>
-							<input type="file" class="form-control" id="img" name="img">
-						</div>
+								<div class="col-md-6">
+									<label for="email">E-mail</label>
+									<input type="email" class="form-control" id="email" placeholder="Digite seu e-mail"
+										required th:field="*{email}">
+								</div>
 
-						<div class="col d-flex justify-content-center flex-wrap gap-2 my-4">
-							<button class="btn btn-primary col-4" type="submit">Salvar</button>
+								<div class="col-md-3">
+									<label for="password">Senha</label>
+									<input type="password" class="form-control" id="password"
+										placeholder="Alterar senha" required th:field="*{password}">
+								</div>
 
-							<a th:href="@{'/usuario/deletar/' + ${user.id}}" class="btn btn-danger col-4"
-								th:onclick="'return confirm(\'Tem certeza que deseja excluir esse usuário?\');'">
-								Excluir
-							</a>
-						</div>
+								<div class="col-md-3">
+									<label for="img">Foto</label>
+									<input type="file" class="form-control" id="img" name="img">
+								</div>
+
+								<div class="col d-flex justify-content-center flex-wrap gap-2 my-4">
+									<button class="btn btn-primary col-4" type="submit">Salvar</button>
+
+									<a th:href="@{'/usuario/deletar/' + ${user.id}}" class="btn btn-danger col-4"
+										th:onclick="'return confirm(\'Tem certeza que deseja excluir esse usuário?\');'">
+										Excluir
+									</a>
+								</div>
+							</div>
+						</form>
 					</div>
-				</form>
-			</div>
-		</div>
+				</div>
 	</main>
 
 </body>

@@ -9,16 +9,17 @@
 			<h2 class="display-3 fw-bold" id="typing-header">Lista de Usuários</h2>
 
 			<div class="table-responsive rounded-3 border">
-				<table class="table table-dark table-striped">
+				<table class="table table-striped table-hover caption-bottom">
+					<caption class="text-center">Esses foram todas os usuários cadastrados até o momento.</caption>
 					<thead>
-						<tr class="text-center">
+						<tr>
 							<th scope="col">ID</th>
 							<th scope="col">Foto</th>
 							<th scope="col">Nome</th>
 							<th scope="col">Aniversário</th>
 							<th scope="col">CPF</th>
 							<th scope="col">Contato</th>
-							<th scope="col">Email</th>
+							<th scope="col">E-mail</th>
 							<th scope="col">Senha</th>
 							<th scope="col"> Ações </th>
 						</tr>
@@ -37,9 +38,7 @@
 							<td
 								th:text="${#strings.replace(#strings.substring(user.cpf, 0, 3) + '.' + #strings.substring(user.cpf, 3, 6) + '.' + #strings.substring(user.cpf, 6, 9) + '-' + #strings.substring(user.cpf, 9, 11), '.-', '-')}">
 							</td>
-							<td
-								th:text="${#strings.replace(#strings.substring(user.contact, 0, 2) + ' ' + #strings.substring(user.contact, 2, 6) + '-' + #strings.substring(user.contact, 6, 10), '- ', '-')}">
-							</td>
+							<td th:text="${user.contact}">></td>
 							<td th:text="${user.email}">></td>
 							<td th:text="${user.password}">></td>
 							<td>
@@ -59,7 +58,7 @@
 				</table>
 			</div>
 
-			<a th:href="@{/usuario/novo}" class="btn btn-primary"> Novo Usuário </a>
+			<a th:href="@{/usuario/novo}" class="btn btn-primary my-3"> Novo Usuário </a>
 		</div>
 	</main>
 
