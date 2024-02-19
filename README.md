@@ -1,5 +1,5 @@
 <h1 align="center">
-<img align="center" src="/assets/img/logo/logo-pink-6.png" alt="devHOME™ logo">
+<img align="center" src="/src/main/resources/static/assets/img/logo/logo-pink-6.png" alt="devHOME™ logo">
 </h1>
 
 <p align="center">
@@ -23,7 +23,7 @@ This repository is where we (Squad #08) develop the [DevHOME™](https://devhome
 
 ## About
 <p align="center">
-  <img alt="devHOME™ in use on multiple platforms" src="/assets/img/mockups/multi-plataforma-pink">
+  <img alt="devHOME™ in use on multiple platforms" src="/src/main/resources/static/assets/img/mockups/multi-pink.png">
 </p>
 <p>Oferecemos um programa de formação profissional que combina teoria e prática, preparando os residentes para uma carreira de sucesso no desenvolvimento de software. Os residentes trabalham em projetos reais com clientes reais, sob a orientação de mentores experientes.
 
@@ -63,7 +63,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 Copyright (c) Home Developer. All rights reserved.
 Licensed under the [MIT](https://github.com/squad08/devhome/blob/main/LICENSE) license.
 
-#### <p align="center"><img width="25rem" src="/assets/img/icon/icon-pink-2.png" alt="devHOME™ logo"> Developed by SQUAD 08 &nbsp;|&nbsp; Recode Pro 2023 🖖</p>
+#### <p align="center"><img width="25rem" src="/src/main/resources/static/assets/img/icon/icon-pink-2.png" alt="devHOME™ logo"> Developed by SQUAD 08 &nbsp;|&nbsp; Recode Pro 2023 🖖</p>
 
 <!--
 &#x2610; Desmarcado
