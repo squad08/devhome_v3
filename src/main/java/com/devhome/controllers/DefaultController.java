@@ -31,11 +31,11 @@ public class DefaultController {
 		return "default/contact";
 	}
 
-//	@GetMapping(value = { "perguntas-frequentes", "faq"})
-//	public String contact(Model model) {
-//		model.addAttribute("title", " FAQ ・ devHOME™ ");
-//		return "default/faq";
-//	}
+	@GetMapping(value = { "perguntas-frequentes", "faq"})
+	public String faq(Model model) {
+		model.addAttribute("title", " FAQ ・ devHOME™ ");
+		return "default/faq";
+	}
 
 	@GetMapping(value = { "entrar", "login" })
 	public String login(Model model) {

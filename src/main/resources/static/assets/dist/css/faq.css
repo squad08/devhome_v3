@@ -1,0 +1,6 @@
+@import url(style.css);
+
+.accordion {
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem  var(--translucid-special);
+    --bs-accordion-active-bg: var(--translucid-special)
+}

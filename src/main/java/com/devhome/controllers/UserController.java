@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.devhome.models.User;
 import com.devhome.services.UserService;
@@ -27,7 +27,11 @@ import com.devhome.services.UserService;
 public class UserController {
 
 	@Autowired
-	private UserService userService;
+	private final UserService userService;
+
+	public UserController(UserService userService) {
+		this.userService = userService;
+	}
 
 	@GetMapping
 	public String list(Model model) {
@@ -73,45 +77,33 @@ public class UserController {
 
 	@GetMapping(value = "/img/{id}", produces = MediaType.IMAGE_JPEG_VALUE)
 	@ResponseBody
-	public byte[] img(@PathVariable Long id) {
-		User user = this.userService.getById(id);
-		return user.getImgBytes();
-	}
+	public ResponseEntity<byte[]> getImage(@PathVariable Long id) {
+		// Lógica para buscar a imagem do banco de dados com base no ID do usuário
+		User user = userService.getById(id);
 
-	@PostMapping({ "/img", "/{id}/editar" })
-	public ModelAndView img(@ModelAttribute User user, @RequestParam MultipartFile img) {
-		try {
-			user.setImg(img);
-			User userImg = userService.update(null, user);
-			ModelAndView page = new ModelAndView("redirect:/usuario");
-			return page;
+		// Verificação se a imagem existe
+		if (user == null || user.getImgBytes() == null) {
+			return ResponseEntity.notFound().build();
 
-		} catch (IOException e) {
-			ModelAndView errorPage = new ModelAndView("error");
-			errorPage.addObject("error", "Erro ao processar a imagem.");
-			return errorPage;
 		}
+		return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(user.getImgBytes());
 	}
 
-//	@GetMapping(value = "/img/{id}", produces = MediaType.IMAGE_JPEG_VALUE)
-//	@ResponseBody
-//	public byte[] img2(@PathVariable("id") Long id) {
-//		User user = this.userService.getById(id);
-//		return user.getImgBytes();
-//	}
-//	
-//	@PostMapping({ "/img", "/{id}/editar" })
-//	public ModelAndView salvarPoste(@ModelAttribute User user, @RequestParam("imagem") MultipartFile imagem) {
-//		try {
-//			user.setImg(imagem);
-//			User imagemSalve = userService.create(id);
-//			ModelAndView page = new ModelAndView("redirect:/usuario");
-//			return page;
-//		} catch (IOException e) {
-//			ModelAndView errorPage = new ModelAndView("error");
-//			errorPage.addObject("error", "Erro ao processar a imagem.");
-//			return errorPage;
-//		}
-//	}
+	@PostMapping("/img/{id}")
+	public String handleImageUpload(@PathVariable Long id,
+			@RequestParam(name = "img", required = false) MultipartFile img) {
+
+		if (img != null && !img.isEmpty()) {
+			try {
+				User user = userService.getById(id);
+				user.setImgBytes(img.getBytes());
+				userService.update(id, user);
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return "redirect:/usuario";
+	}
 
 }

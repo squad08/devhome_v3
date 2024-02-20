@@ -36,7 +36,7 @@ public class User {
 	@Column(nullable = false, length = 80)
 	private String name;
 
-	@Column(nullable = true, name = "birth")
+	@Column(nullable = true)
 	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate birth;
 

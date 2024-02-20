@@ -4,7 +4,7 @@
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
 
 	<main class="form-signin w-100 m-auto">
-		<form class="form-row" action="/usuario/novo" th:object="${user}" method="post">
+		<form class="form-row" th:action="@{/usuario/novo}" th:object="${user}" method="post">
 
 			<a th:href="@{/}">
 				<img class="mb-4" th:src="@{/assets/img/icon/icon-pink-2.png}" alt="devHOME™ logo" id="icon-logo">

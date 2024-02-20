@@ -1,10 +1,10 @@
 <header class="container-fluid navbar navbar-expand-lg bd-navbar fixed-top" data-bs-theme="dark">
 	<nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
 
-		<small class="d-lg-none">"Seja a mudança!"</small>
+		<small class="d-lg-none text-body-secondary my-1 small">"Seja a mudança!"</small>
 
-		<a class="navbar-brand mx-auto" href="/">
-			<img class=" d-block d-lg-flex" id="logo" th:src="@{/assets/img/logo/logo-pink-6.png}" alt="devHOME™ logo">
+		<a class="navbar-brand mx-auto" th:href="@{/}">
+			<img class="d-block d-lg-flex" id="logo" th:src="@{/assets/img/logo/logo-pink-6.png}" alt="devHOME™ logo">
 
 			<title>devHOME™</title>
 			<small class="d-none ms-2">devHOME™</small>
@@ -79,7 +79,7 @@
 
 							<li><a th:href="@{/trilhas}" class="dropdown-item"> Trilhas </a></li>
 
-							<li><a th:href="@{/faq}" class="dropdown-item disabled"> FAQ </a></li>
+							<li><a th:href="@{/perguntas-frequentes}" class="dropdown-item "> FAQ </a></li>
 						</ul>
 					</li>
 				</ul>

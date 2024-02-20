@@ -4,9 +4,9 @@
 <body class="bg-body-tertiary">
 	<div th:replace="@{/shared/_sidebars}"></div>
 
-	<main>
+	<main class="contentor">
 		<div class="container-fluid d-flex align-items-center">
-			<div class="container-xxl d-flex justify-content-center flex-wrap gap-5">
+			<div class="container-xxl d-flex justify-content-center flex-wrap gap-2">
 
 				<div class="text-center">
 					<h1 class="display-3 fw-bold" id="typing-header">Editando Vaga</h1>
@@ -15,24 +15,24 @@
 				<form class="col-10" enctype="multipart/form-data" th:object="${vacancy}" method="post">
 
 					<div class="row">
-						<div class="col-md-1">
-							<label for="id" clas> ID </label>
+						<div class="col-md-1 mb-3">
+							<label for="id"> ID </label>
 							<input type="text" class="form-control text-center" id="id" name="id" th:field="*{id}" disabled>
 						</div>
 
-						<div class="col-md-11">
+						<div class="col-md-11 mb-3">
 							<label for="name"> Título da Vaga </label>
 							<input type="text" class="form-control" id="name" placeholder="Digite o título da vaga "
 								required th:field="*{name}">
 						</div>
 
-						<div class="col-md-12">
+						<div class="col-md-12 mb-3">
 							<label for="description"> Descrição da Vaga </label>
 							<input type="text" class="form-control" id="description"
 								placeholder="Digite a descrição da vaga" required th:field="*{description}">
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-md-4 mb-3">
 							<label for="enterprise"> Selecione a Empresa </label>
 
 							<select class="form-control" id="enterprise" th:field="*{enterprise.id}" required>
@@ -41,7 +41,7 @@
 							</select>
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-md-4 mb-3">
 							<label for="sector"> Setor de atuação </label>
 
 							<select class="form-select" id="sector" th:field="*{sector}" required>
@@ -52,14 +52,14 @@
 							</select>
 						</div>
 
-						<div class="col-md-4">
+						<div class="col-md-4 mb-3">
 							<label for="candidacy"> Data do cadastro </label>
 
 							<input type="date" class="form-control" id="candidacy" placeholder="dd-MM-yyyy" required
 								th:field="*{candidacy}" disabled>
 						</div>
 
-						<div class="col-md-12">
+						<div class="col-md-12 mb-3">
 							<label for="address"> Endereço da Empresa </label>
 
 							<select class="form-control" id="address" th:field="*{enterprise.id}" required>

@@ -4,10 +4,10 @@
 <body class="d-flex align-items-center bg-body-tertiary">
 
 	<main class="form-signin w-100 m-auto">
-		<form action="/login" method="post">
+		<form th:action="@{/login}" method="post">
 
-			<a href="/">
-				<img class="mb-4" src="/assets/img/icon/icon-pink-2.png" alt="devHOME™ logo" id="icon-logo">
+			<a th:href="@{/}">
+				<img class="mb-4" th:src="@{/assets/img/icon/icon-pink-2.png}" alt="devHOME™ logo" id="icon-logo">
 			</a>
 
 			<h1 class="h3 mb-3 fw-normal" id="typing-header">Embarque</h1>
