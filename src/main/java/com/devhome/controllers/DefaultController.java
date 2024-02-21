@@ -10,7 +10,7 @@ public class DefaultController {
 	@GetMapping(value = { "/", "inicio", "home" })
 	public String index(Model model) {
 		model.addAttribute("title", " Início ・ devHOME™ ・ devHOME™ ");
-		return "index";
+		return "default/index";
 	}
 
 	@GetMapping(value = { "sobre", "about" })

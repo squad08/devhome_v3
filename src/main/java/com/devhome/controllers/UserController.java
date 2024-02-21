@@ -78,10 +78,7 @@ public class UserController {
 	@GetMapping(value = "/img/{id}", produces = MediaType.IMAGE_JPEG_VALUE)
 	@ResponseBody
 	public ResponseEntity<byte[]> getImage(@PathVariable Long id) {
-		// Lógica para buscar a imagem do banco de dados com base no ID do usuário
 		User user = userService.getById(id);
-
-		// Verificação se a imagem existe
 		if (user == null || user.getImgBytes() == null) {
 			return ResponseEntity.notFound().build();
 
